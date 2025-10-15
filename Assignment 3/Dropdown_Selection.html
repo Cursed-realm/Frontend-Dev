@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dropdown Selection</title>
+  </head>
+  <body>
+    <h1>Location &amp; Travel Preferences</h1>
+
+    <form>
+      <p>
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="usa">United States</option>
+          <option value="japan" selected>Japan</option>
+          <option value="iceland">Iceland</option>
+          <option value="portugal">Portugal</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="state">State / Region:</label>
+        <select id="state" name="state">
+          <option value="kyoto" selected>Kyoto Prefecture</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="osaka">Osaka</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="city">City:</label>
+        <select id="city" name="city">
+          <option value="kyoto-city" selected>Kyoto City</option>
+          <option value="arashiyama">Arashiyama</option>
+          <option value="gion">Gion</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="place">Favorite Tourist Place:</label>
+        <select id="place" name="place">
+          <option value="fushimi">Fushimi Inari Shrine</option>
+          <option value="kinkaku" selected>Kinkaku-ji (Golden Pavilion)</option>
+          <option value="kamo">Kamo River</option>
+        </select>
+      </p>
+    </form>
+
+    <p>
+      You have selected: Japan, Kyoto Prefecture, Kyoto City — Favorite: Kinkaku-ji
+      (Golden Pavilion).
+    </p>
+  </body>
+</html>

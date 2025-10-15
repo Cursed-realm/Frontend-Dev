@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Course Registration Form</title>
+  </head>
+  <body>
+    <h1>Course Registration</h1>
+    <form action="#" method="post" novalidate>
+      <fieldset>
+        <legend>Student Information</legend>
+
+        <p>
+          <label for="student-name">Full Name:</label>
+          <input type="text" id="student-name" name="student-name" required />
+        </p>
+
+        <p>
+          <label for="student-email">Email:</label>
+          <input type="email" id="student-email" name="student-email" required />
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Course Selection</legend>
+
+        <p>
+          <label for="course-select">Choose a course:</label>
+          <select id="course-select" name="course" required>
+            <option value="" disabled selected>-- Select a course --</option>
+            <option value="intro-webdev">Introduction to Web Development</option>
+            <option value="js-fundamentals">Data Science</option>
+            <option value="css-layouts">Virtual Reality</option>
+            <option value="react-basics">Augmented Reality</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="preferred-start">Preferred Start Date:</label>
+          <input type="date" id="preferred-start" name="preferred-start" />
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Register</button>
+        <button type="reset">Reset</button>
+      </p>
+    </form>
+    <h2>Available Course Schedules</h2>
+    <table border="1" cellspacing="0" cellpadding="6">
+      <caption>Schedules for popular courses</caption>
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Day</th>
+          <th>Time</th>
+          <th>Instructor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Introduction to Web Development</td>
+          <td>Mon &amp; Wed</td>
+          <td>6:00 PM - 8:00 PM</td>
+          <td>Mr. Kamal</td>
+        </tr>
+        <tr>
+          <td>Data Science</td>
+          <td>Tue &amp; Thu</td>
+          <td>5:00 PM - 7:00 PM</td>
+          <td>Mr. Aditya</td>
+        </tr>
+        <tr>
+          <td>Virtual Reality</td>
+          <td>Sat</td>
+          <td>10:00 AM - 1:00 PM</td>
+          <td>Mr. Lee</td>
+        </tr>
+        <tr>
+          <td>Augmented Reality</td>
+          <td>Sun</td>
+          <td>2:00 PM - 5:00 PM</td>
+          <td>Mr. Narayan</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
