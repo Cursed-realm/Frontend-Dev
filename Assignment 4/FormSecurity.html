@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Security Demo</title>
+</head>
+<body>
+  <h1>Secure Form Example</h1>
+  <form autocomplete="off" method="post" action="#">
+    <label>Username
+      <input type="text" name="username" required>
+    </label>
+
+    <label>Password
+      <input type="password" name="password" required>
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p><strong>Note:</strong> Turning off autocomplete can improve security by reducing the chance that sensitive data (like passwords) are stored in the browser's auto-fill cache, which might be accessible to other users on the same device or by malicious extensions. However, it may also reduce usability; consider using secure, encrypted password managers as an alternative.</p>
+</body>
+</html>

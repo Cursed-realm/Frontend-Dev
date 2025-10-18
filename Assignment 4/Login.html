@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <style>
+      body {
+        font-family: system-ui, Segoe UI, Roboto, Arial;
+        padding: 1rem;
+      }
+      form {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+      }
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+
+    <form
+      method="post"
+      action="#"
+      onsubmit="alert('Login submitted (demo)'); return false;"
+    >
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <!-- CSRF (Cross-Site Request Forgery) Token is a security mechanism used to protect web applications from malicious attacks where unauthorized commands are transmitted from a user that the web application trusts -->
+      <input type="hidden" name="csrf_token" value="dummy-token-1234567890" />
+
+      <button type="submit" style="margin-top: 1rem">Login</button>
+    </form>
+  </body>
+</html>

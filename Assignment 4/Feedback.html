@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feedback Form</title>
+    <style>
+      body {
+        font-family: system-ui, Segoe UI, Roboto, Arial;
+        padding: 1rem;
+      }
+      form {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+      }
+      textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Feedback</h1>
+    <form method="post" action="#">
+      <label for="feedback">Your feedback</label>
+      <textarea id="feedback" name="feedback" required></textarea>
+
+      <fieldset style="margin-top: 1rem">
+        <legend>Rating</legend>
+        <label
+          ><input type="radio" name="rating" value="good" required />
+          Good</label
+        >
+        <label
+          ><input type="radio" name="rating" value="average" /> Average</label
+        >
+        <label><input type="radio" name="rating" value="poor" /> Poor</label>
+      </fieldset>
+
+      <button type="submit" style="margin-top: 1rem">Submit Feedback</button>
+    </form>
+  </body>
+</html>

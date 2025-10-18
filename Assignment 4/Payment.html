@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Form</title>
+  <style>body{font-family:system-ui,Segoe UI,Roboto,Arial;padding:1rem}form{max-width:420px;margin:0 auto}label{display:block;margin-top:0.75rem}input{width:100%;padding:0.5rem;margin-top:0.25rem}</style>
+</head>
+<body>
+  <h1>Payment</h1>
+  <form onsubmit="alert('Payment submitted (demo)'); return false;">
+    <label for="cardname">Cardholder Name</label>
+    <input type="text" id="cardname" name="cardname" placeholder="Full name on card" required>
+
+    <label for="cardnumber">Card Number</label>
+    <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456" pattern="[0-9\s]{13,19}" required>
+
+    <label for="expiry">Expiry Date</label>
+    <input type="month" id="expiry" name="expiry" required>
+
+    <label for="cvv">CVV</label>
+    <input type="password" id="cvv" name="cvv" placeholder="123" pattern="[0-9]{3,4}" required>
+
+    <button type="submit" style="margin-top:1rem">Pay Now</button>
+  </form>
+</body>
+</html>
