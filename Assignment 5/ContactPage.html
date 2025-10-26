@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Form Container - Centered */
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* Header Styling */
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h1 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Form Group - Spacing between fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Label Styling */
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Input and Textarea Base Styling */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Textarea specific */
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Focus State - Border color change */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        /* Placeholder Styling */
+        input::placeholder,
+        textarea::placeholder {
+            color: #999;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background-color: #667eea;
+            color: #ffffff;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn:hover {
+            background-color: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Required Field Indicator */
+        .required {
+            color: #e63946;
+            margin-left: 3px;
+        }
+
+        /* Helper Text */
+        .helper-text {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 30px 20px;
+            }
+
+            .form-header h1 {
+                font-size: 1.5rem;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea {
+                padding: 10px 12px;
+            }
+
+            .submit-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Send us a message!</p>
+        </div>
+
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">
+                    Name <span class="required">*</span>
+                </label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">
+                    Email Address <span class="required">*</span>
+                </label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                <p class="helper-text">We'll never share your email with anyone else.</p>
+            </div>
+            <div class="form-group">
+                <label for="subject">
+                    Subject <span class="required">*</span>
+                </label>
+                <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+            </div>
+            <div class="form-group">
+                <label for="message">
+                    Message <span class="required">*</span>
+                </label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                <p class="helper-text">Minimum 10 characters required.</p>
+            </div>
+
+           
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</body>
+
+</html>

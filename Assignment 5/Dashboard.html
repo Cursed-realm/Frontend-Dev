@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .dashboard-container {
+            display: flex;
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            min-height: calc(100vh - 80px);
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            padding: 0 20px 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 5px;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left-color: #667eea;
+            padding-left: 25px;
+        }
+
+        .nav-links a.active {
+            background-color: rgba(102, 126, 234, 0.2);
+            border-left-color: #667eea;
+        }
+
+        .nav-icon {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .content-header {
+            margin-bottom: 30px;
+        }
+
+        .content-header h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .content-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .content-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 280px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .box-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .box-title {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .box-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .icon-blue {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+        }
+
+        .icon-green {
+            background: rgba(76, 175, 80, 0.1);
+            color: #4caf50;
+        }
+
+        .icon-orange {
+            background: rgba(255, 152, 0, 0.1);
+            color: #ff9800;
+        }
+
+        .icon-red {
+            background: rgba(244, 67, 54, 0.1);
+            color: #f44336;
+        }
+
+        .box-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .box-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .box-footer {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .content-box-full {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th {
+            background-color: #f5f5f5;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #666;
+        }
+
+        table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: rgba(76, 175, 80, 0.1);
+            color: #4caf50;
+        }
+
+        .status-pending {
+            background: rgba(255, 152, 0, 0.1);
+            color: #ff9800;
+        }
+
+        @media (max-width: 992px) {
+            .content-boxes {
+                gap: 20px;
+            }
+
+            .content-box {
+                min-width: calc(50% - 10px);
+            }
+        }
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                min-height: auto;
+                height: auto;
+                position: relative;
+                top: 0;
+            }
+
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            .header-info {
+                gap: 10px;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .content-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-box {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.1rem;
+            }
+
+            .user-profile span {
+                display: none;
+            }
+
+            .main-content {
+                padding: 15px;
+            }
+
+            .content-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .box-value {
+                font-size: 1.5rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            table th,
+            table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>📊 Dashboard</h1>
+        <div class="header-info">
+            <div class="user-profile">
+                <div class="avatar">ADK</div>
+                <span>Aditya Kumar Sharma</span>
+            </div>
+        </div>
+    </header>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-title">Navigation</div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#" class="active">
+                        <span class="nav-icon">🏠</span>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">📊</span>
+                        Analytics
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">📁</span>
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">👥</span>
+                        Team
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">⚙️</span>
+                        Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">📧</span>
+                        Messages
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">📝</span>
+                        Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="nav-icon">🚪</span>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Welcome Back, Aditya!</h2>
+                <p>Here's what's happening with your projects today.</p>
+            </div>
+            <div class="content-boxes">
+                <div class="content-box">
+                    <div class="box-header">
+                        <div>
+                            <div class="box-title">Total Projects</div>
+                        </div>
+                        <div class="box-icon icon-blue">📁</div>
+                    </div>
+                    <div class="box-value">24</div>
+                    <div class="box-description">
+                        Active projects across all teams
+                    </div>
+                    <div class="box-footer">
+                        ↑ 12% from last month
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="box-header">
+                        <div>
+                            <div class="box-title">Team Members</div>
+                        </div>
+                        <div class="box-icon icon-green">👥</div>
+                    </div>
+                    <div class="box-value">48</div>
+                    <div class="box-description">
+                        Active team members working
+                    </div>
+                    <div class="box-footer">
+                        ↑ 3 new members this week
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="box-header">
+                        <div>
+                            <div class="box-title">Tasks Completed</div>
+                        </div>
+                        <div class="box-icon icon-orange">✅</div>
+                    </div>
+                    <div class="box-value">156</div>
+                    <div class="box-description">
+                        Tasks finished this month
+                    </div>
+                    <div class="box-footer">
+                        ↑ 23% completion rate
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="box-header">
+                        <div>
+                            <div class="box-title">Pending Reviews</div>
+                        </div>
+                        <div class="box-icon icon-red">⏳</div>
+                    </div>
+                    <div class="box-value">12</div>
+                    <div class="box-description">
+                        Items awaiting your review
+                    </div>
+                    <div class="box-footer">
+                        ↓ 5 from yesterday
+                    </div>
+                </div>
+            </div>
+            <div class="content-box-full">
+                <h3>Recent Projects</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Team Lead</th>
+                                <th>Status</th>
+                                <th>Due Date</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mobile App Redesign</td>
+                                <td>Sarah Johnson</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Dec 15, 2025</td>
+                                <td>75%</td>
+                            </tr>
+                            <tr>
+                                <td>Website Migration</td>
+                                <td>Mike Chen</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Dec 20, 2025</td>
+                                <td>60%</td>
+                            </tr>
+                            <tr>
+                                <td>E-commerce Platform</td>
+                                <td>Emily Davis</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>Jan 10, 2026</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td>Analytics Dashboard</td>
+                                <td>David Wilson</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Dec 25, 2025</td>
+                                <td>85%</td>
+                            </tr>
+                            <tr>
+                                <td>API Integration</td>
+                                <td>Lisa Brown</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>Jan 5, 2026</td>
+                                <td>45%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="content-box-full">
+                <h3>Recent Activity</h3>
+                <div class="box-description" style="margin-top: 15px;">
+                    <p style="margin-bottom: 10px;">📝 <strong>Sarah Johnson</strong> updated the Mobile App Redesign
+                        project - 2 hours ago</p>
+                    <p style="margin-bottom: 10px;">✅ <strong>Mike Chen</strong> completed 5 tasks in Website Migration
+                        - 4 hours ago</p>
+                    <p style="margin-bottom: 10px;">👥 <strong>Emily Davis</strong> added 2 new team members - 6 hours
+                        ago</p>
+                    <p>💬 <strong>David Wilson</strong> commented on Analytics Dashboard - 8 hours ago</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

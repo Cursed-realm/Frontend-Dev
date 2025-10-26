@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechVision - Complete Webpage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg,
+                    rgba(102, 126, 234, 0.95) 0%,
+                    rgba(118, 75, 162, 0.95) 100%);
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            outline: 3px solid rgba(255, 255, 255, 0.3);
+            outline-offset: 3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== HERO SECTION - RELATIVE POSITIONING ===== */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop") center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                    rgba(102, 126, 234, 0.3),
+                    rgba(118, 75, 162, 0.3));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 40px;
+            margin: 0 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 3px solid white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            margin: 5px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+            outline: 3px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 5px;
+        }
+
+        .about {
+            padding: 80px 30px;
+            background: linear-gradient(135deg,
+                    rgba(245, 245, 245, 1) 0%,
+                    rgba(230, 230, 250, 1) 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #667eea;
+            padding: 15px 30px;
+            border-bottom: 4px solid #667eea;
+            display: inline-block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #667eea;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            text-align: justify;
+            line-height: 1.8;
+            padding: 0 10px;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 5px solid white;
+            outline: 3px solid rgba(102, 126, 234, 0.3);
+            outline-offset: 5px;
+        }
+
+        
+        .services {
+            padding: 80px 30px;
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(240, 240, 255, 1) 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-box {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .service-box::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            border-color: transparent;
+            outline: 3px solid rgba(102, 126, 234, 0.5);
+            outline-offset: 5px;
+        }
+
+        .service-box:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg,
+                    rgba(102, 126, 234, 0.1),
+                    rgba(118, 75, 162, 0.1));
+            border-radius: 50%;
+            display: inline-block;
+            border: 3px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .service-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #333;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .service-box p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            padding: 0 10px;
+            margin-top: 15px;
+        }
+
+        .contact {
+            padding: 80px 30px;
+            background: linear-gradient(135deg,
+                    rgba(102, 126, 234, 0.1) 0%,
+                    rgba(118, 75, 162, 0.1) 100%);
+            position: relative;
+        }
+
+        .contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border: 3px solid rgba(102, 126, 234, 0.2);
+            position: relative;
+        }
+
+        .contact-container::after {
+            content: "📧";
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 4rem;
+            opacity: 0.3;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            padding-left: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(245, 245, 255, 0.5);
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            outline: 2px solid rgba(102, 126, 234, 0.3);
+            outline-offset: 2px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: 3px solid transparent;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            border-color: white;
+            outline: 3px solid rgba(102, 126, 234, 0.3);
+            outline-offset: 3px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-top: 5px solid #667eea;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content {
+                padding: 20px;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">TechVision</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to TechVision</h1>
+            <p>Innovating the Future with Cutting-Edge Technology Solutions</p>
+            <a href="#services" class="cta-button">Explore Services</a>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>
+                        TechVision is a leading technology company dedicated to
+                        revolutionizing the digital landscape through innovative solutions
+                        and cutting-edge products. With over a decade of experience, we
+                        have established ourselves as pioneers in mobile authentication
+                        and security systems.
+                    </p>
+                    <p>
+                        Our team of expert developers, designers, and strategists work
+                        collaboratively to deliver exceptional results that exceed client
+                        expectations. We pride ourselves on staying ahead of technological
+                        trends and implementing best practices in everything we do.
+                    </p>
+                    <p>
+                        From startups to enterprise-level organizations, we provide
+                        tailored solutions that drive growth, enhance security, and
+                        streamline operations. Our commitment to excellence and customer
+                        satisfaction sets us apart in the industry.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
+                        alt="Team Working" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile Development</h3>
+                    <p>
+                        Create powerful, scalable mobile applications for iOS and Android
+                        platforms using the latest technologies and frameworks.
+                    </p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">🔒</div>
+                    <h3>Security Solutions</h3>
+                    <p>
+                        Advanced authentication systems and security protocols to protect
+                        your digital assets and user data.
+                    </p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon">☁️</div>
+                    <h3>Cloud Services</h3>
+                    <p>
+                        Scalable cloud infrastructure solutions with robust deployment,
+                        monitoring, and management capabilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message here..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 TechVision. All Rights Reserved.</p>
+            <p>Innovating Technology, Empowering Future</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Careers</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

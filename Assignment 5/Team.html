@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team Members</title>
+    <style>
+      body {
+        font-family: system-ui, Segoe UI, Roboto, Arial;
+        margin: 0;
+        padding: 2rem;
+        background: #f4f7fb;
+      }
+      .team {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #fff;
+        padding: 1.25rem;
+        border-radius: 8px;
+        border: 1px solid #e0e7ef;
+        box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+      }
+      .card h3 {
+        margin: 0 0 0.25rem 0;
+        font-size: 1.25rem;
+      }
+      .card .role {
+        color: #64748b;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+      .card p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #334155;
+      }
+
+      /* Highlighted team lead */
+      .lead {
+        background: #fff7ed;
+        border: 2px solid #f59e0b;
+      }
+
+      /* Box model spacing uniformity */
+      .card,
+      .lead {
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 600px) {
+        .team {
+          grid-template-columns: 1fr;
+          padding: 0 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Our Team</h1>
+    <div class="team">
+      <article class="card lead">
+        <h3>Aditya Kumar Sharma</h3>
+        <div class="role">Team Lead</div>
+        <p>
+          Aditya coordinates the team, plans sprints, and ensures delivery with
+          a focus on UX and performance.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Shreshti Mittal</h3>
+        <div class="role">Frontend Developer</div>
+        <p>
+          Shreshti builds accessible, responsive interfaces and enjoys turning
+          designs into clean code.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Anirudh Singh</h3>
+        <div class="role">Backend Developer</div>
+        <p>
+          Anirudh handles APIs, database integrations, and performance tuning
+          for scalable systems.
+        </p>
+      </article>
+    </div>
+  </body>
+</html>
