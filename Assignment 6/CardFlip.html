@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Card Flip Animation</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f3f4f6;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1rem;
+      }
+
+      .scene {
+        perspective: 1000px;
+      }
+
+      .card {
+        width: 320px;
+        height: 420px;
+        position: relative;
+        transform-style: preserve-3d;
+      }
+
+      .card-inner {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s ease;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+
+      .card:hover .card-inner,
+      .card:focus-within .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card-face {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card-front {
+        background: #fff;
+      }
+      .card-front img {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+        display: block;
+      }
+      .front-title {
+        padding: 1rem;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #111827;
+        text-align: center;
+      }
+
+      .card-back {
+        background: linear-gradient(180deg, #111827, #0f172a);
+        color: #fff;
+        transform: rotateY(180deg);
+        padding: 1.25rem;
+        justify-content: center;
+        text-align: center;
+      }
+      .back-text {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .card {
+        outline: none;
+      }
+      .card:focus {
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
+      }
+
+      @media (max-width: 360px) {
+        .card {
+          width: 280px;
+          height: 380px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scene" aria-hidden="false">
+      <div class="card" tabindex="0" aria-label="Flip card">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <img
+              src="https://picsum.photos/id/1011/800/600"
+              alt="Front image"
+            />
+            <div class="front-title">Explore the Mountains</div>
+          </div>
+
+          <div class="card-face card-back">
+            <div class="back-text">
+              Discover hiking routes, tips for packing light, and the best
+              viewpoints for sunrise photos. Plan your next adventure with
+              confidence.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

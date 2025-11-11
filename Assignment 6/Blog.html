@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog — Responsive Grid</title>
+    <style>
+      :root{
+        --bg:#f7fafc;
+        --card:#ffffff;
+        --accent:#2563eb;
+        --muted:#6b7280;
+        --gap:1rem;
+      }
+      *,*::before,*::after{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family:Arial, Helvetica, sans-serif;
+        background:var(--bg);
+        color:#111827;
+        padding:1.5rem;
+      }
+
+      /* Outer grid using grid-template-areas */
+      .layout{
+        display:grid;
+        grid-template-columns: 260px 1fr; /* sidebar + main */
+        grid-template-rows: auto 1fr auto; /* header, content, footer */
+        grid-template-areas:
+          "header header"
+          "sidebar main"
+          "footer footer";
+        gap: var(--gap);
+        max-width:1200px;
+        margin:0 auto;
+      }
+
+      header.site-header{
+        grid-area: header;
+        background:var(--card);
+        padding:1rem 1.25rem;
+        border-radius:8px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:1rem;
+      }
+      header .title{font-size:1.25rem; font-weight:700}
+      nav.header-nav{display:flex; gap:0.75rem}
+      nav.header-nav a{color:var(--muted); text-decoration:none}
+
+      aside.sidebar{
+        grid-area: sidebar;
+        background:var(--card);
+        padding:1rem;
+        border-radius:8px;
+        min-height:120px;
+        display:flex;
+        flex-direction:column;
+        gap:0.5rem;
+      }
+      .sidebar h3{margin:0 0 0.5rem 0}
+      .category{padding:0.45rem 0.6rem; border-radius:6px; color:var(--muted); text-decoration:none}
+      .category:hover{background:rgba(37,99,235,0.06); color:var(--accent)}
+
+      main.content{
+        grid-area: main;
+        padding:0;
+        display:flex;
+        flex-direction:column;
+        gap:var(--gap);
+      }
+
+      /* Inner grid for posts: two side-by-side on desktop */
+      .posts{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap);
+        align-items:stretch;
+      }
+      .post{
+        background:var(--card);
+        border-radius:8px;
+        padding:1rem;
+        box-shadow:0 8px 20px rgba(2,6,23,0.04);
+        display:flex;
+        flex-direction:column;
+        gap:0.75rem;
+        height:100%;
+      }
+      .post .meta{color:var(--muted); font-size:0.9rem}
+      .post h2{margin:0; font-size:1.05rem}
+      .excerpt{flex:1 1 auto; color:#374151}
+
+      footer.site-footer{
+        grid-area: footer;
+        background:var(--card);
+        padding:0.75rem 1rem;
+        border-radius:8px;
+        text-align:center;
+        color:var(--muted);
+      }
+
+      /* Responsive: move sidebar below main for screens below 800px */
+      @media (max-width:800px){
+        .layout{
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        }
+        .posts{grid-template-columns:1fr}
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <header class="site-header">
+        <div class="title">My Blog</div>
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#blog">Blog</a>
+          <a href="#about">About</a>
+        </nav>
+      </header>
+
+      <aside class="sidebar" aria-label="Categories">
+        <h3>Categories</h3>
+        <a class="category" href="#design">Design</a>
+        <a class="category" href="#development">Development</a>
+        <a class="category" href="#ux">UX</a>
+        <a class="category" href="#tips">Tips & Tricks</a>
+      </aside>
+
+      <main class="content">
+        <div class="posts">
+          <article class="post" tabindex="0">
+            <div class="meta">Nov 11, 2025 — Design</div>
+            <h2>Designing for Accessibility</h2>
+            <p class="excerpt">Practical techniques to make interfaces more accessible for everyone. This post covers semantic HTML, color contrast, and keyboard navigation.</p>
+            <a href="#read1" style="color:var(--accent); text-decoration:none; font-weight:600">Read more →</a>
+          </article>
+
+          <article class="post" tabindex="0">
+            <div class="meta">Nov 9, 2025 — Development</div>
+            <h2>Modern CSS Layouts</h2>
+            <p class="excerpt">A deep dive into CSS Grid and Flexbox patterns for building responsive layouts that scale across devices.</p>
+            <a href="#read2" style="color:var(--accent); text-decoration:none; font-weight:600">Read more →</a>
+          </article>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        Contact: youremail@example.com • @yourhandle
+      </footer>
+    </div>
+  </body>
+</html>

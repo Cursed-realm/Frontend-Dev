@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Photo Gallery</title>
+    <style>
+      :root {
+        --bg: #fafafa;
+        --gap: 16px;
+        --caption-color: #374151;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: #111;
+        padding: 2rem 1rem;
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+      }
+      h1 {
+        margin: 0 0 1rem 0;
+        font-size: 1.4rem;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(200px, 1fr)
+        ); /* requirement */
+        gap: var(--gap);
+      }
+
+      figure.photo {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .photo-wrap {
+        width: 100%;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #eee;
+        display: block;
+      }
+      .photo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+        transform-origin: center;
+      }
+
+      .photo-wrap:hover img,
+      .photo-wrap:focus img {
+        transform: scale(1.05);
+      }
+      figcaption {
+        font-size: 0.95rem;
+        color: var(--caption-color);
+        text-align: left;
+        padding: 0 4px;
+      }
+
+      @media (max-width: 420px) {
+        .container {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Photo Gallery</h1>
+      <section class="gallery" aria-label="Photo gallery">
+        <figure class="photo">
+          <a class="photo-wrap" href="#" aria-hidden="true">
+            <img
+              src="https://picsum.photos/id/1015/800/600"
+              alt="Mountains at sunrise"
+            />
+          </a>
+          <figcaption>Mountains at sunrise</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <a class="photo-wrap" href="#" aria-hidden="true">
+            <img
+              src="https://picsum.photos/id/1016/800/600"
+              alt="Foggy forest"
+            />
+          </a>
+          <figcaption>Foggy forest</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <a class="photo-wrap" href="#" aria-hidden="true">
+            <img
+              src="https://picsum.photos/id/1020/800/600"
+              alt="Coastal cliffs"
+            />
+          </a>
+          <figcaption>Coastal cliffs</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <a class="photo-wrap" href="#" aria-hidden="true">
+            <img
+              src="https://picsum.photos/id/1024/800/600"
+              alt="Desert dunes"
+            />
+          </a>
+          <figcaption>Desert dunes</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <a class="photo-wrap" href="#" aria-hidden="true">
+            <img
+              src="https://picsum.photos/id/1035/800/600"
+              alt="City skyline"
+            />
+          </a>
+          <figcaption>City skyline</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <a class="photo-wrap" href="#" aria-hidden="true">
+            <img
+              src="https://picsum.photos/id/1033/800/600"
+              alt="Lakeside view"
+            />
+          </a>
+          <figcaption>Lakeside view</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <a class="photo-wrap" href="#" aria-hidden="true">
+            <img
+              src="https://picsum.photos/id/1043/800/600"
+              alt="Snowy peaks"
+            />
+          </a>
+          <figcaption>Snowy peaks</figcaption>
+        </figure>
+
+        <figure class="photo">
+          <a class="photo-wrap" href="#" aria-hidden="true">
+            <img
+              src="https://picsum.photos/id/1056/800/600"
+              alt="Wildflowers"
+            />
+          </a>
+          <figcaption>Wildflowers</figcaption>
+        </figure>
+      </section>
+    </div>
+  </body>
+</html>

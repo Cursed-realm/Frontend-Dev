@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pricing</title>
+    <style>
+      :root{
+        --bg:#f5f7fa;
+        --card:#ffffff;
+        --accent:#63b3ed;
+        --muted:#4a5568;
+        --featured-bg:#2b6cb0; 
+        --featured-color:#fff;
+      }
+      *,*::before,*::after{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family: Arial, Helvetica, sans-serif;
+        background:var(--bg);
+        color:#111;
+        display:flex;
+        justify-content:center;
+        padding:2rem 1rem;
+      }
+      .wrap{
+        width:100%;
+        max-width:1100px;
+      }
+      h1{margin:0 0 1rem 0; color:#1f2937}
+
+    
+      .pricing{
+        display:flex;
+        gap:1rem;
+        align-items:stretch; 
+      }
+      .pricing-card{
+        background:var(--card);
+        border-radius:12px;
+        padding:1.5rem;
+        box-shadow:0 8px 24px rgba(17,24,39,0.06);
+        flex:1 1 0;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s;
+        transform-origin:center;
+        opacity:0;
+        animation: fadeIn 0.6s forwards;
+      }
+
+      .pricing-card.featured{
+        flex:1.15 1 0;
+        background:var(--featured-bg);
+        color:var(--featured-color);
+      }
+      .pricing-card h2{margin:0 0 0.5rem 0}
+      .price{font-size:1.6rem;font-weight:700;margin:0 0 1rem 0}
+      .features{color:var(--muted);margin:0 0 1rem 0}
+      .cta{
+        display:inline-block;
+        padding:0.6rem 1rem;
+        border-radius:8px;
+        background:var(--accent);
+        color:#fff;
+        text-decoration:none;
+        font-weight:700;
+      }
+
+      .pricing-card:hover,
+      .pricing-card:focus{
+        transform: translateY(-10px);
+        box-shadow:0 22px 48px rgba(17,24,39,0.16);
+        outline:none;
+      }
+      .pricing-card:focus{ 
+        transform: translateY(-10px);
+      }
+
+      .pricing-card:nth-child(1){animation-delay:0.08s}
+      .pricing-card:nth-child(2){animation-delay:0.18s}
+      .pricing-card:nth-child(3){animation-delay:0.28s}
+
+      @keyframes fadeIn{
+        from{opacity:0; transform: translateY(10px)}
+        to{opacity:1; transform:none}
+      }
+
+      @media (max-width:750px){
+        .pricing{flex-direction:column}
+        .pricing-card{flex:1 0 auto}
+        .pricing-card.featured{flex:1 0 auto}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Pricing</h1>
+      <div class="pricing" role="list">
+        <div class="pricing-card" tabindex="0" role="listitem" aria-label="Basic plan">
+          <div>
+            <h2>Basic</h2>
+            <div class="price">$9<span style="font-size:0.7rem">/mo</span></div>
+            <div class="features">Essential features to get started</div>
+          </div>
+          <a class="cta" href="#signup-basic">Choose</a>
+        </div>
+
+        <div class="pricing-card featured" tabindex="0" role="listitem" aria-label="Pro plan (recommended)">
+          <div>
+            <h2>Pro</h2>
+            <div class="price">$29<span style="font-size:0.7rem">/mo</span></div>
+            <div class="features">Everything in Basic plus advanced tools</div>
+          </div>
+          <a class="cta" href="#signup-pro" style="background:#fff;color:var(--featured-bg)">Get Pro</a>
+        </div>
+
+        <div class="pricing-card" tabindex="0" role="listitem" aria-label="Enterprise plan">
+          <div>
+            <h2>Enterprise</h2>
+            <div class="price">$99<span style="font-size:0.7rem">/mo</span></div>
+            <div class="features">Full feature set for large teams</div>
+          </div>
+          <a class="cta" href="#signup-enterprise">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
