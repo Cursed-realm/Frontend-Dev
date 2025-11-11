@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tooltips Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #2d3436;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 800px;
+        }
+
+        .tooltip-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .tooltip-trigger {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tooltip-trigger:hover {
+            transform: translateY(-2px);
+        }
+
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+
+
+        .text {
+            padding: 0.75rem 1.5rem;
+            background: #3498db;
+            color: white;
+            border-radius: 4px;
+        }
+
+
+        .shape {
+            width: 50px;
+            height: 50px;
+            background: #e74c3c;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        [data-tooltip] {
+            position: relative;
+        }
+
+        [data-tooltip]::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            padding: 0.5rem 1rem;
+            background-color: #2d3436;
+            color: white;
+            font-size: 0.875rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        [data-tooltip]::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #2d3436;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        [data-tooltip]:hover::before {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-10px);
+        }
+
+        [data-tooltip]:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-4px);
+        }
+
+        .tooltip-wrapper.right [data-tooltip]::before {
+            left: 100%;
+            top: 50%;
+            transform: translateX(10px) translateY(-50%);
+        }
+
+        .tooltip-wrapper.right [data-tooltip]:hover::before {
+            transform: translateX(20px) translateY(-50%);
+        }
+
+        .tooltip-wrapper.right [data-tooltip]::after {
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-right-color: #2d3436;
+        }
+
+        .tooltip-wrapper.right [data-tooltip]:hover::after {
+            transform: translateX(8px) translateY(-50%);
+        }
+
+        .tooltip-wrapper.left [data-tooltip]::before {
+            right: 100%;
+            left: auto;
+            top: 50%;
+            transform: translateX(-10px) translateY(-50%);
+        }
+
+        .tooltip-wrapper.left [data-tooltip]:hover::before {
+            transform: translateX(-20px) translateY(-50%);
+        }
+
+        .tooltip-wrapper.left [data-tooltip]::after {
+            right: 100%;
+            left: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #2d3436;
+        }
+
+        .tooltip-wrapper.left [data-tooltip]:hover::after {
+            transform: translateX(-8px) translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Tooltip Examples</h1>
+    
+    <div class="container">
+
+        <div class="tooltip-wrapper">
+            <div class="tooltip-trigger icon" data-tooltip="Click to send email">
+                ✉️
+            </div>
+        </div>
+
+        <div class="tooltip-wrapper right">
+            <div class="tooltip-trigger text" data-tooltip="Hover for more info">
+                Help
+            </div>
+        </div>
+
+        <div class="tooltip-wrapper left">
+            <div class="tooltip-trigger icon" data-tooltip="Settings">
+                ⚙️
+            </div>
+        </div>
+
+        <div class="tooltip-wrapper">
+            <div class="tooltip-trigger shape" data-tooltip="Triangle shape">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

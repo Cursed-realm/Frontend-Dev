@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3436;
+            margin-bottom: 3rem;
+        }
+
+        .animation-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .demo-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .title {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 1.1rem;
+            color: #2d3436;
+        }
+
+        /* Bouncing Ball Animation */
+        .bouncing-ball {
+            width: 50px;
+            height: 50px;
+            background: #e74c3c;
+            border-radius: 50%;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+                animation-timing-function: ease-out;
+            }
+            50% {
+                transform: translateY(100px);
+                animation-timing-function: ease-in;
+            }
+        }
+
+        /* Color Changing Box Animation */
+        .color-box {
+            width: 100px;
+            height: 100px;
+            background: #3498db;
+            animation: colorChange 4s ease-in-out infinite;
+        }
+
+        @keyframes colorChange {
+            0% { background: #3498db; transform: rotate(0deg); }
+            25% { background: #e74c3c; transform: rotate(90deg); }
+            50% { background: #2ecc71; transform: rotate(180deg); }
+            75% { background: #f1c40f; transform: rotate(270deg); }
+            100% { background: #3498db; transform: rotate(360deg); }
+        }
+
+        /* Pulse Effect Animation */
+        .pulse-circle {
+            width: 100px;
+            height: 100px;
+            background: #9b59b6;
+            border-radius: 50%;
+            position: relative;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .pulse-circle::before,
+        .pulse-circle::after {
+            content: '';
+            position: absolute;
+            border: 2px solid #9b59b6;
+            border-radius: 50%;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            animation: ripple 2s ease-in-out infinite;
+        }
+
+        .pulse-circle::after {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Loading Spinner Animation */
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Text Animation */
+        .animated-text {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #3498db, #2ecc71, #e74c3c, #f1c40f);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Animations Showcase</h1>
+
+        <div class="animation-section">
+            <!-- Bouncing Ball -->
+            <div class="demo-box">
+                <span class="title">Bouncing Ball</span>
+                <div class="bouncing-ball"></div>
+            </div>
+
+            <!-- Color Changing Box -->
+            <div class="demo-box">
+                <span class="title">Color & Rotate</span>
+                <div class="color-box"></div>
+            </div>
+
+            <!-- Pulse Effect -->
+            <div class="demo-box">
+                <span class="title">Pulse Effect</span>
+                <div class="pulse-circle"></div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div class="demo-box">
+                <span class="title">Loading Spinner</span>
+                <div class="loading-spinner"></div>
+            </div>
+
+            <!-- Animated Text -->
+            <div class="demo-box">
+                <span class="title">Gradient Text</span>
+                <div class="animated-text">Hello!</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

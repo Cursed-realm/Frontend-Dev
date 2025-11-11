@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3436;
+            margin-bottom: 2rem;
+        }
+
+        .gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-card:hover .overlay {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        figcaption {
+            padding: 1rem;
+            color: #2d3436;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            text-align: center;
+            background: white;
+        }
+
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Nature Photography Showcase</h1>
+    
+    <div class="gallery">
+        <figure class="image-card">
+            <div class="image-wrapper">
+                <img src="https://wallpapers.com/images/hd/4k-mountain-l3f04sogeaabr5h0.jpg" alt="Mountain landscape">
+                <div class="overlay"></div>
+            </div>
+            <figcaption>Majestic mountain peaks reaching towards the sky, captured during golden hour</figcaption>
+        </figure>
+
+        <figure class="image-card">
+            <div class="image-wrapper">
+                <img src="https://i.pinimg.com/736x/84/33/8d/84338d9590e33c4f278211d79a6b5a29.jpg" alt="Ocean waves">
+                <div class="overlay"></div>
+            </div>
+            <figcaption>Powerful ocean waves crashing against the shore at sunset</figcaption>
+        </figure>
+
+        <figure class="image-card">
+            <div class="image-wrapper">
+                <img src="https://4kwallpapers.com/images/wallpapers/arashiyama-bamboo-3840x2160-15688.jpg" alt="Forest">
+                <div class="overlay"></div>
+            </div>
+            <figcaption>Dense forest canopy with sunlight filtering through the leaves</figcaption>
+        </figure>
+
+        <figure class="image-card">
+            <div class="image-wrapper">
+                <img src="https://4kwallpapers.com/images/wallpapers/sahara-desert-merzouga-morocco-sand-dune-blue-sky-sunny-day-5120x2880-2122.jpg" alt="Desert">
+                <div class="overlay"></div>
+            </div>
+            <figcaption>Endless sand dunes stretching to the horizon in the Sahara Desert</figcaption>
+        </figure>
+
+        <figure class="image-card">
+            <div class="image-wrapper">
+                <img src="https://cdn.wallpapersafari.com/3/70/Pd2R9w.jpg" alt="Waterfall">
+                <div class="overlay"></div>
+            </div>
+            <figcaption>Cascading waterfall surrounded by lush green vegetation</figcaption>
+        </figure>
+
+        <figure class="image-card">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1593378026483-2a1fd46a35bd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bm9ydGhlcm4lMjBsaWdodHN8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000" alt="Aurora">
+                <div class="overlay"></div>
+            </div>
+            <figcaption>Spectacular Northern Lights dancing across the Arctic sky</figcaption>
+        </figure>
+    </div>
+</body>
+</html>

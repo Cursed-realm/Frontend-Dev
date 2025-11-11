@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini UI Layout</title>
+    <style>
+      /* Global reset + box-sizing */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: linear-gradient(180deg, #f6f8fb 0%, #ffffff 100%);
+        color: #0f1724;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .shell {
+        width: 100%;
+        max-width: 980px;
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 14px 36px rgba(2, 6, 23, 0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid rgba(15, 23, 36, 0.06);
+        background: linear-gradient(
+          90deg,
+          rgba(6, 182, 212, 0.03),
+          rgba(79, 70, 229, 0.02)
+        );
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #06b6d4, #4f46e5);
+        box-shadow: 0 6px 14px rgba(79, 70, 229, 0.14);
+      }
+      .brand h1 {
+        font-size: 1rem;
+        margin: 0;
+      }
+      nav a {
+        color: #334155;
+        text-decoration: none;
+        margin-left: 1rem;
+        font-weight: 600;
+      }
+
+      .main {
+        display: flex;
+        gap: 1.25rem;
+        padding: 1.5rem;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .form-card {
+        flex: 1 1 420px;
+        min-width: 260px;
+        background: #fbfdff;
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 8px 24px rgba(2, 6, 23, 0.04);
+        border: 1px solid rgba(15, 23, 36, 0.03);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .form-card h2 {
+        font-size: 1.05rem;
+        margin: 0;
+      }
+      .form-card p {
+        color: #475569;
+        margin: 0;
+      }
+
+      label {
+        font-size: 0.9rem;
+        color: #334155;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea,
+      select {
+        padding: 0.72rem 0.9rem;
+        border-radius: 8px;
+        border: 1px solid rgba(15, 23, 36, 0.08);
+        background: white;
+        font-size: 0.95rem;
+        transition: box-shadow 180ms ease, transform 180ms ease,
+          border-color 180ms ease;
+      }
+      textarea {
+        min-height: 92px;
+        resize: vertical;
+      }
+
+      input[type="text"]:hover,
+      input[type="email"]:hover,
+      textarea:hover,
+      select:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(6, 182, 212, 0.06);
+      }
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: #06b6d4;
+        box-shadow: 0 6px 18px rgba(6, 182, 212, 0.14);
+      }
+
+      input[type="text"]:focus-visible,
+      input[type="email"]:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.12);
+      }
+
+      .controls {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+      }
+      .btn {
+        padding: 0.66rem 1.05rem;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: transform 200ms ease, box-shadow 200ms ease,
+          background-color 200ms ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        justify-content: center;
+      }
+      .btn-primary {
+        background: linear-gradient(90deg, #06b6d4, #4f46e5);
+        color: white;
+        box-shadow: 0 10px 26px rgba(79, 70, 229, 0.14);
+        border-color: transparent;
+      }
+      .btn-primary:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 22px 48px rgba(79, 70, 229, 0.14);
+      }
+      .btn-primary:active {
+        transform: translateY(0) scale(0.99);
+      }
+      .btn-primary:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.12),
+          0 10px 26px rgba(79, 70, 229, 0.12);
+      }
+
+      .btn-secondary {
+        background: #f8fafc;
+        border: 1px solid rgba(15, 23, 36, 0.06);
+        color: #0f1724;
+      }
+      .btn-secondary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(2, 6, 23, 0.06);
+      }
+
+      .btn-ghost {
+        background: transparent;
+        border: 1px dashed rgba(15, 23, 36, 0.06);
+        color: #334155;
+      }
+      .btn-ghost:hover {
+        background: #fbfdff;
+        transform: translateY(-2px);
+      }
+
+      /* Disabled */
+      .btn[disabled] {
+        background: #e6e9ee;
+        color: #94a3b8;
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+      }
+
+      /* Media column */
+      .media {
+        width: 260px;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+      }
+      .media img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(2, 6, 23, 0.06);
+        border: 1px solid rgba(15, 23, 36, 0.04);
+      }
+      .media p {
+        font-size: 0.9rem;
+        color: #475569;
+        text-align: center;
+      }
+
+      /* Footer */
+      footer {
+        padding: 0.9rem 1.25rem;
+        border-top: 1px solid rgba(15, 23, 36, 0.04);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer .note {
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive stack */
+      @media (max-width: 880px) {
+        .main {
+          flex-direction: column;
+        }
+        .media {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <h1>Acme Mini UI</h1>
+        </div>
+        <nav aria-label="primary navigation">
+          <a href="#">Docs</a>
+          <a href="#">Support</a>
+        </nav>
+      </header>
+
+      <main class="main">
+        <section class="form-card" aria-labelledby="contactTitle">
+          <h2 id="contactTitle">Contact Us</h2>
+          <p>Send a quick message and we'll get back to you.</p>
+
+          <form action="#" method="post" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="reason">Reason</label>
+              <select id="reason" name="reason">
+                <option value="general">General question</option>
+                <option value="bug">Bug report</option>
+                <option value="partnership">Partnership</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Type your message..."
+              ></textarea>
+            </div>
+
+            <div class="controls" role="group" aria-label="form actions">
+              <button class="btn btn-primary" type="submit">
+                Send message
+              </button>
+              <button class="btn btn-secondary" type="reset">Reset</button>
+              <button class="btn btn-ghost" type="button" aria-haspopup="true">
+                More options
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="media" aria-hidden="false">
+          <img
+            src="https://source.unsplash.com/420x260/?workspace"
+            alt="Mini workspace"
+          />
+          <p>
+            Compact card layout with consistent shadows, borders and spacing.
+            Hover fields and buttons to see effects.
+          </p>
+        </aside>
+      </main>
+
+      <footer>
+        <div class="note">© 2025 Acme Co</div>
+        <div style="color: #64748b; font-size: 0.9rem">
+          Built with HTML &amp; CSS
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

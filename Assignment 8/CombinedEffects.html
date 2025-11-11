@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Combined Effects Demo</title>
+  <style>
+    /* Page layout */
+    :root{ --bg:#f3f6fb; --card:#ffffff; --accent:#4f46e5; --accent-2:#06b6d4; }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg), #ffffff 60%);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+      color:#0f1724;
+    }
+    .wrap{
+      width:100%;
+      max-width:1100px;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(16,24,40,0.08);
+      padding:2rem;
+    }
+    h1{font-size:1.5rem;margin:0 0 1rem}
+    p.lead{color:#334155;margin:0 0 1.25rem}
+
+    /* Flex container distributing examples evenly */
+    .examples{
+      display:flex;
+      gap:1.25rem;
+      justify-content:space-between;
+      align-items:stretch;
+      flex-wrap:wrap;
+      margin-top:1.25rem;
+    }
+    .card{
+      flex:1 1 220px;
+      background:#fbfdff;
+      border-radius:10px;
+      padding:1.25rem;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:0.75rem;
+      min-width:200px;
+      box-shadow:0 6px 18px rgba(15,23,36,0.04);
+      transition:transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    }
+    .card:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(15,23,36,0.08)}
+
+    /* Base interactive element style */
+    .example-element{
+      --pad:0.7rem 1.2rem;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:var(--pad);
+      border-radius:8px;
+      font-weight:600;
+      cursor:pointer;
+      user-select:none;
+      border:2px solid transparent;
+      transition:transform 220ms ease-in-out, background-color 220ms ease-in-out, box-shadow 220ms ease-in-out, color 220ms ease-in-out;
+      transform-origin:center center;
+      text-decoration:none;
+    }
+
+    /* Primary example (button) combining hover, focus, active */
+    .btn-primary{
+      background:var(--accent);
+      color:white;
+      box-shadow:0 6px 14px rgba(79,70,229,0.18);
+    }
+    /* Hover: grow slightly + color change + stronger shadow */
+    .btn-primary:hover{
+      transform:scale(1.05);
+      background:#6366f1;
+      box-shadow:0 18px 40px rgba(79,70,229,0.18);
+    }
+    /* Focus visible for keyboard users */
+    .btn-primary:focus{
+      outline:none;
+      box-shadow:0 0 0 4px rgba(99,102,241,0.15), 0 6px 14px rgba(79,70,229,0.12);
+    }
+    /* Active when pressing */
+    .btn-primary:active{
+      transform:scale(0.98);
+      box-shadow:0 6px 10px rgba(79,70,229,0.12);
+    }
+
+    /* Secondary example (outline link) */
+    .link-outline{
+      background:transparent;
+      color:var(--accent);
+      border:2px solid var(--accent);
+      padding:0.55rem 1rem;
+      border-radius:999px;
+    }
+    .link-outline:hover{
+      transform:scale(1.06) translateY(-2px);
+      background:var(--accent);
+      color:white;
+      box-shadow:0 12px 28px rgba(79,70,229,0.08);
+    }
+    .link-outline:focus{outline:none; box-shadow:0 0 0 4px rgba(79,70,229,0.12)}
+    .link-outline:active{transform:scale(0.98)}
+
+    /* Card interactive (uses pseudo-classes, transforms and transition) */
+    .card-action{
+      width:100%;
+      padding:0.75rem 1rem;
+      border-radius:8px;
+      background:linear-gradient(180deg, #ffffff, #f8fafc);
+      border:1px solid rgba(15,23,36,0.05);
+      color:#0f1724;
+      text-align:center;
+      box-shadow:0 6px 18px rgba(2,6,23,0.03);
+    }
+    .card-action:hover{
+      transform:translateY(-6px) scale(1.015);
+      background:linear-gradient(180deg,#f8fbff,#f0f7ff);
+      box-shadow:0 20px 48px rgba(6,10,20,0.08);
+    }
+    .card-action:active{transform:translateY(0) scale(0.995)}
+    .card-action:focus{outline:none; box-shadow:0 0 0 4px rgba(6,182,212,0.12)}
+
+    /* Disabled example */
+    .btn-disabled{
+      background:#e6e9ee; color:#94a3b8; cursor:not-allowed; box-shadow:none; border-color:transparent;
+    }
+    .btn-disabled:hover{transform:none}
+
+    /* Small explanatory text */
+    .muted{font-size:0.9rem;color:#475569;text-align:center}
+    .kbd{display:inline-block;padding:0.12rem 0.45rem;border-radius:6px;background:#f1f5f9;border:1px solid #e2e8f0;font-weight:600;font-size:0.85rem}
+
+    /* Layout tweaks for small screens */
+    @media (max-width:720px){
+      .examples{gap:1rem}
+      .card{flex:1 1 100%; min-width:unset}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Combined Effects: Pseudo-classes + Transitions + Transforms</h1>
+    <p class="lead">Examples below combine :hover, :focus, :active and transitions with transforms and box-shadow. Use Tab to focus items and try clicking/holding to see active states.</p>
+
+    <section class="examples">
+      <!-- Primary button example -->
+      <article class="card">
+        <div class="example-element btn-primary" tabindex="0">Primary</div>
+        <div class="muted">Hover → grow &amp; color; Focus shows ring; Active → press.</div>
+      </article>
+
+      <!-- Outline link example -->
+      <article class="card">
+        <a class="example-element link-outline" href="#">Outline Link</a>
+        <div class="muted">Start as outline, hover fills and grows. Keyboard focus visible.</div>
+      </article>
+
+      <!-- Card action example -->
+      <article class="card">
+        <button class="example-element card-action" type="button">Card Action</button>
+        <div class="muted">Card-style control that lifts and scales on hover; subtle press feedback.</div>
+      </article>
+
+      <!-- Disabled button example -->
+      <article class="card">
+        <button class="example-element btn-disabled" disabled>Disabled</button>
+        <div class="muted">Disabled state uses muted colors and no hover transform.</div>
+      </article>
+    </section>
+
+    <p style="margin-top:1rem;color:#334155;text-align:center">Spacing and alignment are handled with Flexbox; transitions use ease-in-out timing for balanced motion.</p>
+  </main>
+</body>
+</html>

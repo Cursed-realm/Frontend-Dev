@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Practice</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Element Selector - Styles all body elements */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Element Selector - All headings */
+        h1, h2, h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* ID Selector - Unique header styling */
+        #main-header {
+            background-color: #3498db;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        /* Class Selector - Reusable section styling */
+        .section {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        /* Descendant Selector - Paragraphs inside sections */
+        .section p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        /* Child Combinator (>) - Direct child list items of .special-list */
+        .special-list > li {
+            background-color: #e8f4f8;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* Adjacent Sibling Combinator (+) - Paragraph after heading */
+        h3 + p {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        /* General Sibling Combinator (~) - All paragraphs after specific element */
+        .marker ~ p {
+            font-style: italic;
+            color: #27ae60;
+        }
+
+        /* Attribute Selector - Links with specific attributes */
+        a[target="_blank"] {
+            color: #9b59b6;
+            text-decoration: none;
+            border-bottom: 2px dotted #9b59b6;
+        }
+
+        /* Attribute Selector - Input types */
+        input[type="text"] {
+            padding: 0.5rem;
+            border: 2px solid #3498db;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        /* Pseudo-class Selector - First and last items */
+        li:first-child {
+            font-weight: bold;
+        }
+
+        li:last-child {
+            font-style: italic;
+        }
+
+        /* Class + Pseudo-class combination */
+        .special-list li:nth-child(odd) {
+            background-color: #d5e8f2;
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <h1>CSS Selectors Practice</h1>
+        <p>Learn how different CSS selectors work with real examples</p>
+    </header>
+
+    <div class="section">
+        <h2>Element and Class Selectors</h2>
+        <p>This paragraph is styled using a descendant selector (.section p)</p>
+        <p>Another paragraph showing the same styling</p>
+    </div>
+
+    <div class="section">
+        <h3>Child and Sibling Combinators</h3>
+        <p>This paragraph is styled using the adjacent sibling combinator (h3 + p)</p>
+        <div class="marker"></div>
+        <p>This paragraph is styled using the general sibling combinator (~)</p>
+        <p>This one too!</p>
+    </div>
+
+    <div class="section">
+        <h3>List with Special Styling</h3>
+        <ul class="special-list">
+            <li>First item (bold via :first-child)</li>
+            <li>Second item</li>
+            <li>Third item</li>
+            <li>Fourth item</li>
+            <li>Last item (italic via :last-child)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Attribute Selectors</h3>
+        <p>
+            Visit our 
+            <a href="https://example.com" target="_blank">partner website</a>
+            (styled using [target="_blank"])
+        </p>
+        <input type="text" placeholder="Text input styled with [type='text']">
+    </div>
+
+    <footer>
+        <p>Created to demonstrate CSS Selectors</p>
+        <p>&copy; 2025 CSS Practice</p>
+    </footer>
+</body>
+</html>
