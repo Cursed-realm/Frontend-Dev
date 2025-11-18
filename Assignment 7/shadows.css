@@ -1,0 +1,864 @@
+/* ==========================================
+   Global Styles & Reset
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   Page Wrapper & Layout
+   ========================================== */
+
+.page-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ==========================================
+   Header Section
+   ========================================== */
+
+.main-header {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-title {
+    color: white;
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.page-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2em;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   Main Content & Sections
+   ========================================== */
+
+.main-content {
+    padding-bottom: 40px;
+}
+
+.shadow-section {
+    margin-bottom: 70px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title-wrapper {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-description {
+    color: #666;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+/* ==========================================
+   Cards Container
+   ========================================== */
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* ==========================================
+   1. BASIC CARD STYLES WITH BOX-SHADOWS
+   ========================================== */
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+}
+
+.card-subtle {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-subtle:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-medium {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-medium:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-dramatic {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.card-dramatic:hover {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 40px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.avatar-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.avatar-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.card-title {
+    color: #333;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Content */
+.card-content {
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.role {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.shadow-info {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.shadow-info p {
+    color: #555;
+    font-size: 0.9em;
+    margin: 8px 0;
+    font-family: 'Courier New', monospace;
+}
+
+.shadow-info strong {
+    color: #333;
+}
+
+/* Card Footer */
+.card-footer {
+    display: flex;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+/* ==========================================
+   2. PROFILE CARDS
+   ========================================== */
+
+.profile-section {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.profile-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.profile-card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 50px 100px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3em;
+}
+
+.image-placeholder.developer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.image-placeholder.designer {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.image-placeholder.manager {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.profile-info {
+    padding: 25px;
+}
+
+.profile-name {
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.profile-role {
+    color: #667eea;
+    font-size: 0.95em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.profile-bio {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.profile-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.skill {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.profile-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.profile-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* ==========================================
+   3. TEXT-SHADOW EFFECTS
+   ========================================== */
+
+.text-shadow-section {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.text-shadow-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.text-shadow-box {
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+.text-shadow-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-subtle {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-color: #ddd;
+}
+
+.shadow-medium {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+    border-color: #667eea;
+}
+
+.shadow-dramatic {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+    border-color: #f5576c;
+}
+
+.shadow-colored {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 100%);
+    border-color: #4facfe;
+}
+
+.shadow-multiple {
+    background: linear-gradient(135deg, #fffef5 0%, #fff0e8 100%);
+    border-color: #FFE66D;
+}
+
+.shadow-glow {
+    background: linear-gradient(135deg, #f5f0ff 0%, #eff5ff 100%);
+    border-color: #667eea;
+}
+
+.shadow-heading {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.subtle-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.medium-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dramatic-shadow {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.colored-shadow {
+    color: #4ECDC4;
+    text-shadow: 2px 2px 4px #FF6B6B;
+}
+
+.multiple-shadow {
+    color: #333;
+    text-shadow: 1px 1px 0 #FF6B6B, 2px 2px 0 #4ECDC4, 3px 3px 0 #FFE66D;
+}
+
+.glow-shadow {
+    color: white;
+    text-shadow: 0 0 5px #667eea, 0 0 10px #764ba2, 0 0 15px #f093fb;
+}
+
+.shadow-description {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.text-shadow-box code {
+    display: block;
+    background: rgba(0, 0, 0, 0.08);
+    color: #333;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    overflow-x: auto;
+}
+
+/* ==========================================
+   4. ADVANCED SHADOW CARDS
+   ========================================== */
+
+.advanced-section {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.advanced-card {
+    background: white;
+    border: 1px solid #eee;
+    overflow: visible;
+}
+
+.advanced-card:hover {
+    transform: translateY(-12px);
+}
+
+.card-visual {
+    width: 100%;
+    height: 120px;
+    border-radius: 12px 12px 0 0;
+    margin: -30px -30px 25px -30px;
+}
+
+.inset-card {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.inset-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.inset-visual {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.glow-card {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.glow-card:hover {
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+}
+
+.glow-visual {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6), 0 0 40px rgba(102, 126, 234, 0.3);
+}
+
+.colored-shadow-card {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.colored-shadow-card:hover {
+    box-shadow: 10px 15px 30px rgba(255, 107, 107, 0.3);
+}
+
+.colored-visual {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFB366 100%);
+    box-shadow: 10px 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+.code-snippet {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    margin: 15px 0;
+}
+
+.techniques-list {
+    list-style: none;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.techniques-list li {
+    padding: 8px 0;
+    color: #666;
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee;
+}
+
+.techniques-list li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================
+   5. REFERENCE GUIDE
+   ========================================== */
+
+.reference-section {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.reference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.reference-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.reference-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.reference-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.reference-content {
+    color: #555;
+    font-size: 0.9em;
+    line-height: 1.8;
+}
+
+.reference-content p {
+    margin-bottom: 10px;
+}
+
+.reference-content strong {
+    color: #333;
+}
+
+.reference-content code {
+    display: block;
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    margin: 8px 0;
+    overflow-x: auto;
+}
+
+.reference-content ul {
+    list-style-position: inside;
+    color: #555;
+}
+
+.reference-content li {
+    margin: 8px 0;
+}
+
+/* ==========================================
+   Footer Section
+   ========================================== */
+
+.main-footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    margin-top: 40px;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+}
+
+.main-footer p {
+    color: white;
+    margin: 10px 0;
+}
+
+.footer-note {
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .cards-container {
+        gap: 25px;
+    }
+
+    .card,
+    .profile-card {
+        max-width: 100%;
+        flex: 0 1 calc(50% - 15px);
+    }
+
+    .page-title {
+        font-size: 2.2em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-wrapper {
+        padding: 15px;
+    }
+
+    .main-header {
+        padding: 40px 20px;
+        margin-bottom: 30px;
+    }
+
+    .page-title {
+        font-size: 1.8em;
+    }
+
+    .page-subtitle {
+        font-size: 1em;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card,
+    .profile-card {
+        max-width: 100%;
+        flex: 0 1 100%;
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .text-shadow-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .reference-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-header {
+        gap: 15px;
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    .card-title {
+        font-size: 1.2em;
+    }
+
+    .profile-section {
+        padding: 30px 20px;
+    }
+
+    .advanced-section {
+        padding: 30px 20px;
+    }
+
+    .text-shadow-section {
+        padding: 30px 20px;
+    }
+
+    .reference-section {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-wrapper {
+        padding: 10px;
+    }
+
+    .main-header {
+        padding: 25px 15px;
+        margin-bottom: 20px;
+    }
+
+    .page-title {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+        font-size: 0.9em;
+    }
+
+    .section-title-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 1.3em;
+    }
+
+    .section-description {
+        font-size: 0.95em;
+    }
+
+    .card,
+    .profile-card {
+        min-width: auto;
+        max-width: 100%;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.1em;
+    }
+
+    .profile-info {
+        padding: 15px;
+    }
+
+    .profile-name {
+        font-size: 1.2em;
+    }
+
+    .profile-skills {
+        justify-content: center;
+    }
+
+    .text-shadow-box {
+        padding: 25px 15px;
+    }
+
+    .shadow-heading {
+        font-size: 1.4em;
+    }
+
+    .main-footer {
+        padding: 25px 15px;
+    }
+
+    .main-footer p {
+        font-size: 0.85em;
+    }
+}

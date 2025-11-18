@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Background Webpage</title>
+    <link rel="stylesheet" href="gradient.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="header-content">
+            <h1>Gradient Backgrounds</h1>
+            <p class="header-subtitle">Mastering Linear and Radial Gradients in CSS</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Linear Gradient Section 1 -->
+        <section class="gradient-section linear-gradient-1">
+            <div class="section-content">
+                <div class="content-box">
+                    <h2>Linear Gradient - Basic</h2>
+                    <p class="gradient-description">This section demonstrates a basic <strong>linear gradient</strong> flowing from top-left to bottom-right.</p>
+                    <div class="details">
+                        <h3>Gradient Properties:</h3>
+                        <ul>
+                            <li><strong>Direction:</strong> 135deg (diagonal top-left to bottom-right)</li>
+                            <li><strong>Color 1:</strong> #667eea (Purple-blue)</li>
+                            <li><strong>Color 2:</strong> #764ba2 (Deep purple)</li>
+                            <li><strong>Color 3:</strong> #f093fb (Pink)</li>
+                        </ul>
+                    </div>
+                    <p class="detail-text">Linear gradients are perfect for creating smooth color transitions in a specific direction. You can control the angle (in degrees) or use keywords like 'to right', 'to bottom', etc.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Linear Gradient Section 2 - Vertical -->
+        <section class="gradient-section linear-gradient-2">
+            <div class="section-content">
+                <div class="content-box">
+                    <h2>Linear Gradient - Vertical Multi-Color</h2>
+                    <p class="gradient-description">This section shows a <strong>vertical linear gradient</strong> with multiple color stops.</p>
+                    <div class="details">
+                        <h3>Gradient Properties:</h3>
+                        <ul>
+                            <li><strong>Direction:</strong> to bottom (90deg)</li>
+                            <li><strong>Color Stops:</strong> 4 colors with specific percentages</li>
+                            <li><strong>Color 1:</strong> #FF6B6B (Red) at 0%</li>
+                            <li><strong>Color 2:</strong> #4ECDC4 (Cyan) at 33%</li>
+                            <li><strong>Color 3:</strong> #FFE66D (Yellow) at 66%</li>
+                            <li><strong>Color 4:</strong> #95E1D3 (Mint) at 100%</li>
+                        </ul>
+                    </div>
+                    <p class="detail-text">By adding multiple color stops with percentage values, you can create complex and vibrant gradient effects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Linear Gradient Parallax Section -->
+        <section class="gradient-section linear-gradient-parallax">
+            <div class="parallax-overlay">
+                <div class="section-content">
+                    <div class="content-box parallax-box">
+                        <h2>Linear Gradient - Parallax Effect</h2>
+                        <p class="gradient-description">This section uses <strong>background-attachment: fixed</strong> to create a <strong>parallax-like effect</strong>.</p>
+                        <div class="details">
+                            <h3>Parallax Properties:</h3>
+                            <ul>
+                                <li><strong>Background-Attachment:</strong> fixed</li>
+                                <li><strong>Effect:</strong> Background stays fixed while content scrolls</li>
+                                <li><strong>Gradient:</strong> 45deg angle from #1e3c72 to #2a5298</li>
+                                <li><strong>Use Case:</strong> Creates depth and visual interest when scrolling</li>
+                            </ul>
+                        </div>
+                        <p class="detail-text">Scroll up and down to see the parallax effect! The background remains fixed while the content moves, creating an engaging visual experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Radial Gradient Section 1 -->
+        <section class="gradient-section radial-gradient-1">
+            <div class="section-content">
+                <div class="content-box">
+                    <h2>Radial Gradient - Circle</h2>
+                    <p class="gradient-description">This section demonstrates a <strong>radial gradient</strong> with a circular shape emanating from the center.</p>
+                    <div class="details">
+                        <h3>Gradient Properties:</h3>
+                        <ul>
+                            <li><strong>Shape:</strong> circle</li>
+                            <li><strong>Position:</strong> center (50% 50%)</li>
+                            <li><strong>Color 1:</strong> #FFD89B (Light orange) at center</li>
+                            <li><strong>Color 2:</strong> #FF6B9D (Pink) at edges</li>
+                            <li><strong>Spread:</strong> Expands outward from center point</li>
+                        </ul>
+                    </div>
+                    <p class="detail-text">Radial gradients are ideal for creating spotlight effects, glowing orbs, or circular color transitions from a central point outward.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Radial Gradient Section 2 - Ellipse -->
+        <section class="gradient-section radial-gradient-2">
+            <div class="section-content">
+                <div class="content-box">
+                    <h2>Radial Gradient - Ellipse</h2>
+                    <p class="gradient-description">This section shows a <strong>radial gradient with ellipse shape</strong> creating an elongated effect.</p>
+                    <div class="details">
+                        <h3>Gradient Properties:</h3>
+                        <ul>
+                            <li><strong>Shape:</strong> ellipse</li>
+                            <li><strong>Size:</strong> farthest-corner</li>
+                            <li><strong>Position:</strong> 30% 60%</li>
+                            <li><strong>Color 1:</strong> #C1FF72 (Lime) at center</li>
+                            <li><strong>Color 2:</strong> #00B4DB (Cyan) at edges</li>
+                            <li><strong>Effect:</strong> Off-center radial gradient</li>
+                        </ul>
+                    </div>
+                    <p class="detail-text">Ellipse gradients can be positioned off-center and use different size keywords (closest-side, farthest-side, etc.) for creative effects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Radial Gradient Section 3 - Multiple Stops -->
+        <section class="gradient-section radial-gradient-3">
+            <div class="section-content">
+                <div class="content-box">
+                    <h2>Radial Gradient - Multiple Color Stops</h2>
+                    <p class="gradient-description">This section demonstrates a <strong>radial gradient with multiple color stops</strong> creating concentric circles.</p>
+                    <div class="details">
+                        <h3>Gradient Properties:</h3>
+                        <ul>
+                            <li><strong>Shape:</strong> circle</li>
+                            <li><strong>Position:</strong> center</li>
+                            <li><strong>Color Stops:</strong> 5 distinct color rings</li>
+                            <li><strong>Colors:</strong> #FF0080, #7928CA, #4C3EFF, #1E90FF, #00D4FF</li>
+                            <li><strong>Percentages:</strong> 0%, 20%, 40%, 60%, 100%</li>
+                        </ul>
+                    </div>
+                    <p class="detail-text">Multiple color stops in radial gradients create beautiful concentric patterns, perfect for badges, buttons, and decorative elements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gradient Showcase Section -->
+        <section class="gradient-section showcase-section">
+            <div class="section-content">
+                <h2>Gradient Combinations & Effects</h2>
+                <p class="center-text">Explore creative combinations of gradients</p>
+                
+                <div class="showcase-grid">
+                    <!-- Showcase 1: Linear to Radial Blend -->
+                    <div class="showcase-item">
+                        <div class="showcase-gradient gradient-blend-1">
+                            <div class="showcase-overlay">
+                                <h3>Linear + Radial Blend</h3>
+                                <p>Multiple gradient layers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Showcase 2: Diagonal Linear -->
+                    <div class="showcase-item">
+                        <div class="showcase-gradient gradient-blend-2">
+                            <div class="showcase-overlay">
+                                <h3>Diagonal Linear</h3>
+                                <p>45-degree angle gradient</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Showcase 3: Radial Glow -->
+                    <div class="showcase-item">
+                        <div class="showcase-gradient gradient-blend-3">
+                            <div class="showcase-overlay">
+                                <h3>Radial Glow</h3>
+                                <p>Glowing radial effect</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Showcase 4: Repeating Linear -->
+                    <div class="showcase-item">
+                        <div class="showcase-gradient gradient-blend-4">
+                            <div class="showcase-overlay">
+                                <h3>Striped Pattern</h3>
+                                <p>Repeating gradient</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Showcase 5: Smooth Rainbow -->
+                    <div class="showcase-item">
+                        <div class="showcase-gradient gradient-blend-5">
+                            <div class="showcase-overlay">
+                                <h3>Rainbow Gradient</h3>
+                                <p>Multi-color spectrum</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Showcase 6: Purple Paradise -->
+                    <div class="showcase-item">
+                        <div class="showcase-gradient gradient-blend-6">
+                            <div class="showcase-overlay">
+                                <h3>Purple Paradise</h3>
+                                <p>Deep purple gradients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Gradient Demo -->
+        <section class="gradient-section interactive-section">
+            <div class="section-content">
+                <div class="content-box">
+                    <h2>Quick Reference Guide</h2>
+                    <div class="reference-grid">
+                        <div class="reference-item">
+                            <h3>Linear Gradient Syntax</h3>
+                            <code>background: linear-gradient(angle, color1, color2);</code>
+                            <p>Example: <code>linear-gradient(45deg, #667eea, #764ba2)</code></p>
+                        </div>
+
+                        <div class="reference-item">
+                            <h3>Radial Gradient Syntax</h3>
+                            <code>background: radial-gradient(shape position, color1, color2);</code>
+                            <p>Example: <code>radial-gradient(circle at center, #FFD89B, #FF6B9D)</code></p>
+                        </div>
+
+                        <div class="reference-item">
+                            <h3>Linear Gradient with Stops</h3>
+                            <code>linear-gradient(to right, red 0%, yellow 50%, green 100%)</code>
+                            <p>Control color transitions with percentages</p>
+                        </div>
+
+                        <div class="reference-item">
+                            <h3>Radial Gradient with Stops</h3>
+                            <code>radial-gradient(circle, red 0%, yellow 50%, blue 100%)</code>
+                            <p>Create concentric color rings</p>
+                        </div>
+
+                        <div class="reference-item">
+                            <h3>Parallax Effect</h3>
+                            <code>background-attachment: fixed;</code>
+                            <p>Keeps background fixed while content scrolls</p>
+                        </div>
+
+                        <div class="reference-item">
+                            <h3>Direction Keywords</h3>
+                            <code>to top | to bottom | to right | to left</code>
+                            <p>Or use degrees: 0deg, 45deg, 90deg, 180deg, etc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Gradient Background Webpage | CSS Gradients Mastery</p>
+            <p class="footer-note">Explore the power of linear and radial gradients for modern web design</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,612 @@
+/* ==========================================
+   Global Styles & Reset
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   Page Layout & Header
+   ========================================== */
+
+.page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid #667eea;
+}
+
+header h1 {
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* ==========================================
+   Section Styling
+   ========================================== */
+
+.practice-section {
+    margin-bottom: 60px;
+}
+
+.section-header {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #667eea;
+}
+
+.section-header h2 {
+    font-size: 2em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-size: 1em;
+    color: #999;
+    font-style: italic;
+}
+
+/* ==========================================
+   Flexbox Container (Main Box Layout)
+   ========================================== */
+
+.flexbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* ==========================================
+   Base Box Styling
+   ========================================== */
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.box:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.box-content {
+    width: 100%;
+    text-align: center;
+}
+
+.box h3 {
+    color: white;
+    margin-bottom: 12px;
+    font-size: 1.3em;
+}
+
+.unit-info, .property-info {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95em;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9em;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.extra-content {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85em;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* ==========================================
+   1. BASIC SIZING UNITS
+   ========================================== */
+
+/* Pixel Units */
+.box-pixels {
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+/* Percentage Units */
+.box-percentage {
+    width: 80%;
+    height: 60%;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    min-width: 200px;
+    min-height: 150px;
+    max-width: 400px;
+    max-height: 300px;
+}
+
+/* Em Units */
+.box-em {
+    width: 15em;
+    height: 10em;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+/* Viewport Height Units */
+.box-vh {
+    width: 100%;
+    height: 30vh;
+    max-width: 500px;
+    min-height: 200px;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+/* ==========================================
+   2. MIN AND MAX PROPERTIES
+   ========================================== */
+
+/* Min-Height Example */
+.box-min-height {
+    width: 200px;
+    min-height: 200px;
+    height: auto;
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+/* Max-Width Example */
+.box-max-width {
+    width: 100%;
+    max-width: 250px;
+    height: 180px;
+    background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+}
+
+/* Min & Max Combined */
+.box-min-max {
+    width: 100%;
+    min-width: 150px;
+    max-width: 300px;
+    height: 180px;
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+/* Max-Height Example */
+.box-max-height {
+    width: 200px;
+    max-height: 180px;
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 15px;
+}
+
+/* ==========================================
+   3. OVERFLOW PROPERTIES
+   ========================================== */
+
+.box-overflow-hidden,
+.box-overflow-scroll,
+.box-overflow-auto,
+.box-overflow-visible {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 220px;
+    padding: 15px;
+}
+
+.box-overflow-hidden {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.box-overflow-scroll {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+.box-overflow-auto {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+.box-overflow-visible {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.box-overflow-hidden h3,
+.box-overflow-scroll h3,
+.box-overflow-auto h3,
+.box-overflow-visible h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.overflow-content-container {
+    width: 200px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 0.85em;
+    color: white;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.overflow-content-container p {
+    margin: 8px 0;
+    color: white;
+}
+
+/* ==========================================
+   4. RESPONSIVE WIDTH EXAMPLES
+   ========================================== */
+
+.responsive-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.responsive-box {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.responsive-box:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.responsive-box h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.responsive-box p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95em;
+}
+
+/* Fixed Width */
+.fixed-width {
+    width: 400px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    margin: 0 auto;
+}
+
+/* Flexible Width */
+.flex-width {
+    width: 100%;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+/* Constrained Width */
+.constrained-width {
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    margin: 0 auto;
+}
+
+/* Em-Based Width */
+.em-width {
+    width: 30em;
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    margin: 0 auto;
+}
+
+/* ==========================================
+   5. COMPLEX SIZING SCENARIOS
+   ========================================== */
+
+.complex-card,
+.complex-hero,
+.complex-sidebar,
+.complex-container {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.complex-card {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    min-height: 300px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.complex-hero {
+    width: 100%;
+    height: 60vh;
+    min-height: 300px;
+    max-height: 600px;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.complex-sidebar {
+    width: 250px;
+    max-width: 80%;
+    min-height: 400px;
+    background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+    overflow: auto;
+}
+
+.complex-container {
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.card-info, .hero-info, .sidebar-info, .container-info {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.card-info p, .hero-info p, .sidebar-info p, .container-info p {
+    color: white;
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+/* ==========================================
+   6. SIZE COMPARISON CHART
+   ========================================== */
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    min-height: 400px;
+}
+
+.comparison-item {
+    text-align: center;
+}
+
+.comparison-item h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.size-box {
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
+}
+
+.size-small {
+    width: 150px;
+    height: 100px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.size-medium {
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+.size-large {
+    width: 450px;
+    height: 300px;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+.size-full {
+    width: 400px;
+    height: 100px;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.comparison-item p {
+    color: #666;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    color: rgba(255, 255, 255, 0.7);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .page-container {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    .flexbox-container {
+        gap: 20px;
+    }
+
+    .box {
+        flex: 0 1 calc(50% - 10px);
+    }
+
+    .box-percentage {
+        width: 90%;
+    }
+
+    .size-large {
+        width: 350px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .section-header h2 {
+        font-size: 1.5em;
+    }
+
+    .flexbox-container {
+        gap: 15px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .box {
+        flex: 0 1 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .box-pixels,
+    .box-percentage,
+    .box-em,
+    .box-vh,
+    .box-min-height,
+    .box-max-width,
+    .box-min-max,
+    .box-max-height {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    .responsive-box {
+        width: 100%;
+    }
+
+    .fixed-width,
+    .flex-width,
+    .constrained-width,
+    .em-width {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .comparison-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .size-large {
+        width: 80vw;
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+
+    .size-medium {
+        width: 70vw;
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .section-header h2 {
+        font-size: 1.3em;
+    }
+
+    .flexbox-container,
+    .responsive-examples {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .box {
+        width: 100%;
+        min-height: 150px;
+    }
+
+    .size-box {
+        width: 80vw !important;
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+}

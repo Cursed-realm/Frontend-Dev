@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height and Width Practice Layout</title>
+    <link rel="stylesheet" href="height-width.css">
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Height and Width Practice Layout</h1>
+            <p class="subtitle">Master sizing with different units and responsive properties</p>
+        </header>
+
+        <!-- Section 1: Basic Units -->
+        <section class="practice-section">
+            <div class="section-header">
+                <h2>1. Basic Sizing Units</h2>
+                <p>Explore different measurement units: px, %, em, and viewport units</p>
+            </div>
+
+            <div class="flexbox-container">
+                <!-- Pixel Units (px) -->
+                <div class="box box-pixels">
+                    <div class="box-content">
+                        <h3>Pixels (px)</h3>
+                        <p class="unit-info">Width: 200px</p>
+                        <p class="unit-info">Height: 150px</p>
+                        <p class="description">Fixed absolute size. Doesn't scale with parent or viewport.</p>
+                    </div>
+                </div>
+
+                <!-- Percentage Units (%) -->
+                <div class="box box-percentage">
+                    <div class="box-content">
+                        <h3>Percentage (%)</h3>
+                        <p class="unit-info">Width: 80%</p>
+                        <p class="unit-info">Height: 60%</p>
+                        <p class="description">Relative to parent element's size. Responsive and flexible.</p>
+                    </div>
+                </div>
+
+                <!-- Em Units (em) -->
+                <div class="box box-em">
+                    <div class="box-content">
+                        <h3>Em Units (em)</h3>
+                        <p class="unit-info">Width: 15em</p>
+                        <p class="unit-info">Height: 10em</p>
+                        <p class="description">Relative to the font-size of the element. Scalable typography.</p>
+                    </div>
+                </div>
+
+                <!-- Viewport Height Units (vh) -->
+                <div class="box box-vh">
+                    <div class="box-content">
+                        <h3>Viewport Height (vh)</h3>
+                        <p class="unit-info">Width: 100%</p>
+                        <p class="unit-info">Height: 30vh</p>
+                        <p class="description">1vh = 1% of viewport height. Great for full-screen layouts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Min and Max Properties -->
+        <section class="practice-section">
+            <div class="section-header">
+                <h2>2. Min and Max Properties</h2>
+                <p>Control minimum and maximum dimensions for responsive design</p>
+            </div>
+
+            <div class="flexbox-container">
+                <!-- Min Height Example -->
+                <div class="box box-min-height">
+                    <div class="box-content">
+                        <h3>Min-Height Example</h3>
+                        <p class="property-info">min-height: 200px</p>
+                        <p class="property-info">height: auto</p>
+                        <p class="description">Box will never shrink below 200px, but can expand with content.</p>
+                        <p class="extra-content">Extra content will cause the box to expand beyond minimum height.</p>
+                    </div>
+                </div>
+
+                <!-- Max Width Example -->
+                <div class="box box-max-width">
+                    <div class="box-content">
+                        <h3>Max-Width Example</h3>
+                        <p class="property-info">max-width: 250px</p>
+                        <p class="property-info">width: 100%</p>
+                        <p class="description">Box scales down on smaller screens but won't exceed 250px on larger screens.</p>
+                    </div>
+                </div>
+
+                <!-- Min & Max Combined -->
+                <div class="box box-min-max">
+                    <div class="box-content">
+                        <h3>Min & Max Combined</h3>
+                        <p class="property-info">min-width: 150px</p>
+                        <p class="property-info">max-width: 300px</p>
+                        <p class="description">Box maintains a range. Perfect for responsive flexible layouts.</p>
+                    </div>
+                </div>
+
+                <!-- Max Height Example -->
+                <div class="box box-max-height">
+                    <div class="box-content">
+                        <h3>Max-Height Example</h3>
+                        <p class="property-info">max-height: 180px</p>
+                        <p class="description">Box is constrained to maximum height. Content overflow is hidden.</p>
+                        <p class="overflow-content">This is additional content that will be hidden due to max-height overflow constraints.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Overflow Handling -->
+        <section class="practice-section">
+            <div class="section-header">
+                <h2>3. Overflow Properties</h2>
+                <p>Manage content that exceeds box dimensions</p>
+            </div>
+
+            <div class="flexbox-container">
+                <!-- Overflow Hidden -->
+                <div class="box box-overflow-hidden">
+                    <h3>Overflow: Hidden</h3>
+                    <div class="overflow-content-container overflow-hidden">
+                        <p>This content exceeds the container's dimensions and is clipped.</p>
+                        <p>The excess content is completely hidden from view.</p>
+                        <p>Width: 200px | Height: 120px</p>
+                    </div>
+                </div>
+
+                <!-- Overflow Scroll -->
+                <div class="box box-overflow-scroll">
+                    <h3>Overflow: Scroll</h3>
+                    <div class="overflow-content-container overflow-scroll">
+                        <p>This container has scrollable content.</p>
+                        <p>Both horizontal and vertical scrollbars appear.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>You can scroll to see hidden content.</p>
+                        <p>Width: 200px | Height: 120px</p>
+                    </div>
+                </div>
+
+                <!-- Overflow Auto -->
+                <div class="box box-overflow-auto">
+                    <h3>Overflow: Auto</h3>
+                    <div class="overflow-content-container overflow-auto">
+                        <p>This container uses overflow auto.</p>
+                        <p>Scrollbars appear only when needed.</p>
+                        <p>If content fits, no scrollbars are shown.</p>
+                        <p>Width: 200px | Height: 120px</p>
+                    </div>
+                </div>
+
+                <!-- Overflow Visible -->
+                <div class="box box-overflow-visible">
+                    <h3>Overflow: Visible</h3>
+                    <div class="overflow-content-container overflow-visible">
+                        <p>Content is not clipped or scrolled.</p>
+                        <p>Excess content overflows outside the box boundaries.</p>
+                        <p>Width: 200px | Height: 120px</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Responsive Width Examples -->
+        <section class="practice-section">
+            <div class="section-header">
+                <h2>4. Responsive Width Examples</h2>
+                <p>Resize the window to see responsive behavior</p>
+            </div>
+
+            <div class="responsive-examples">
+                <!-- Fixed Width -->
+                <div class="responsive-box fixed-width">
+                    <h3>Fixed Width (400px)</h3>
+                    <p>Does not change regardless of viewport size.</p>
+                </div>
+
+                <!-- Flexible Width -->
+                <div class="responsive-box flex-width">
+                    <h3>Flexible Width (100%)</h3>
+                    <p>Adapts to parent container. Responsive to viewport changes.</p>
+                </div>
+
+                <!-- Constrained Width -->
+                <div class="responsive-box constrained-width">
+                    <h3>Constrained (max-width: 500px, width: 90%)</h3>
+                    <p>Fluid on small screens, fixed maximum on large screens.</p>
+                </div>
+
+                <!-- Em-Based Width -->
+                <div class="responsive-box em-width">
+                    <h3>Em-Based (30em)</h3>
+                    <p>Scales with font-size. Changes when font-size changes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Aspect Ratio & Complex Layout -->
+        <section class="practice-section">
+            <div class="section-header">
+                <h2>5. Complex Sizing Scenarios</h2>
+                <p>Real-world examples combining multiple properties</p>
+            </div>
+
+            <div class="flexbox-container">
+                <!-- Card Component -->
+                <div class="box complex-card">
+                    <div class="box-content">
+                        <h3>Card Component</h3>
+                        <div class="card-info">
+                            <p><strong>Width:</strong> 100% (max 280px)</p>
+                            <p><strong>Height:</strong> auto</p>
+                            <p><strong>Min-Height:</strong> 300px</p>
+                        </div>
+                        <p class="description">Flexible card that adapts to content while maintaining minimum dimensions.</p>
+                    </div>
+                </div>
+
+                <!-- Hero Section -->
+                <div class="box complex-hero">
+                    <div class="box-content">
+                        <h3>Hero Section</h3>
+                        <div class="hero-info">
+                            <p><strong>Width:</strong> 100%</p>
+                            <p><strong>Height:</strong> 60vh (min 300px)</p>
+                        </div>
+                        <p class="description">Full-width section with viewport-based height. Responsive to screen size.</p>
+                    </div>
+                </div>
+
+                <!-- Sidebar Layout -->
+                <div class="box complex-sidebar">
+                    <div class="box-content">
+                        <h3>Sidebar Component</h3>
+                        <div class="sidebar-info">
+                            <p><strong>Width:</strong> 250px (max-width: 80%)</p>
+                            <p><strong>Min-Height:</strong> 400px</p>
+                            <p><strong>Overflow:</strong> auto</p>
+                        </div>
+                        <p class="description">Fixed sidebar that adapts on mobile with scrollable content.</p>
+                    </div>
+                </div>
+
+                <!-- Container -->
+                <div class="box complex-container">
+                    <div class="box-content">
+                        <h3>Container</h3>
+                        <div class="container-info">
+                            <p><strong>Width:</strong> 90% (max 1200px)</p>
+                            <p><strong>Height:</strong> auto</p>
+                        </div>
+                        <p class="description">Centered container with maximum width constraint for readability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Side-by-Side Comparison -->
+        <section class="practice-section">
+            <div class="section-header">
+                <h2>6. Size Comparison Chart</h2>
+                <p>Visual representation of different sizing approaches</p>
+            </div>
+
+            <div class="comparison-container">
+                <div class="comparison-item">
+                    <h4>Small Box</h4>
+                    <div class="size-box size-small"></div>
+                    <p>150px × 100px</p>
+                </div>
+
+                <div class="comparison-item">
+                    <h4>Medium Box</h4>
+                    <div class="size-box size-medium"></div>
+                    <p>300px × 200px</p>
+                </div>
+
+                <div class="comparison-item">
+                    <h4>Large Box</h4>
+                    <div class="size-box size-large"></div>
+                    <p>450px × 300px</p>
+                </div>
+
+                <div class="comparison-item">
+                    <h4>Full Width</h4>
+                    <div class="size-box size-full"></div>
+                    <p>100% × 100px</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Height and Width Practice Layout | CSS Fundamentals</p>
+    </footer>
+</body>
+</html>

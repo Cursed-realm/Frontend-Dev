@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Selectors Demonstration</title>
+    <link rel="stylesheet" href="selectors.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <h1>Advanced CSS Selectors</h1>
+            <p class="subtitle">Master Attribute Selectors, Pseudo-Classes, Pseudo-Elements & Combinators</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Section 1: Attribute Selectors -->
+            <section class="selector-section">
+                <h2>1. Attribute Selectors</h2>
+                <p class="section-description">Style elements based on their attributes</p>
+
+                <div class="subsection">
+                    <h3>Input Type Attributes</h3>
+                    <div class="input-group">
+                        <input type="text" placeholder="Text input [type='text']">
+                        <input type="email" placeholder="Email input [type='email']">
+                        <input type="password" placeholder="Password input [type='password']">
+                        <input type="checkbox"> Checkbox [type='checkbox']
+                        <input type="radio"> Radio [type='radio']
+                        <input type="number" placeholder="Number input [type='number']">
+                        <input type="date" value="2025-11-11">
+                        <input type="color" value="#667eea">
+                        <input type="range" min="0" max="100">
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Link Attributes</h3>
+                    <div class="link-list">
+                        <a href="https://example.com">HTTPS Link [href^='https']</a>
+                        <a href="http://example.com">HTTP Link [href^='http']</a>
+                        <a href="mailto:email@example.com">Email Link [href^='mailto']</a>
+                        <a href="file.pdf">PDF File [href$='.pdf']</a>
+                        <a href="image.jpg">JPG Image [href$='.jpg']</a>
+                        <a href="document.docx">Word File [href*='.doc']</a>
+                        <a href="/internal/page">Internal Link [href^='/']</a>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Data Attributes</h3>
+                    <div class="data-items">
+                        <div class="data-item" data-status="active">Status: Active</div>
+                        <div class="data-item" data-status="inactive">Status: Inactive</div>
+                        <div class="data-item" data-status="pending">Status: Pending</div>
+                        <div class="data-item" data-category="important">Category: Important</div>
+                        <div class="data-item" data-category="normal">Category: Normal</div>
+                        <div class="data-item" data-priority="high">Priority: High</div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Button Attributes</h3>
+                    <div class="button-group">
+                        <button type="submit" disabled>Disabled Button [disabled]</button>
+                        <button type="submit">Submit Button [type='submit']</button>
+                        <button type="reset">Reset Button [type='reset']</button>
+                        <button type="button" required>Button with Required [required]</button>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <p><strong>Attribute Selector Types:</strong></p>
+                    <code>[attr] - Has attribute</code>
+                    <code>[attr="value"] - Exact match</code>
+                    <code>[attr^="value"] - Starts with</code>
+                    <code>[attr$="value"] - Ends with</code>
+                    <code>[attr*="value"] - Contains</code>
+                    <code>[attr~="value"] - Word match</code>
+                </div>
+            </section>
+
+            <!-- Section 2: Pseudo-Classes -->
+            <section class="selector-section">
+                <h2>2. Pseudo-Classes</h2>
+                <p class="section-description">Style elements based on their state or position</p>
+
+                <div class="subsection">
+                    <h3>:hover and :active States</h3>
+                    <div class="interactive-items">
+                        <div class="item-box">Hover over me!</div>
+                        <div class="item-box">Click me for :active state</div>
+                        <div class="item-box">Interactive element</div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>:focus and :focus-visible</h3>
+                    <div class="focus-group">
+                        <input type="text" placeholder="Focus on me with Tab or Click">
+                        <textarea placeholder="Focus this textarea - :focus pseudo-class"></textarea>
+                        <select>
+                            <option>Select an option</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>:nth-child() Selector</h3>
+                    <div class="list-container">
+                        <div class="list-item">Item 1 - nth-child(1)</div>
+                        <div class="list-item">Item 2 - nth-child(2)</div>
+                        <div class="list-item">Item 3 - nth-child(3)</div>
+                        <div class="list-item">Item 4 - nth-child(4)</div>
+                        <div class="list-item">Item 5 - nth-child(5)</div>
+                        <div class="list-item">Item 6 - nth-child(6)</div>
+                        <div class="list-item">Item 7 - nth-child(7)</div>
+                        <div class="list-item">Item 8 - nth-child(8)</div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>:nth-of-type() Selector</h3>
+                    <div class="mixed-content">
+                        <p>Paragraph 1 - nth-of-type(1)</p>
+                        <span>Span element</span>
+                        <p>Paragraph 2 - nth-of-type(2)</p>
+                        <span>Span element</span>
+                        <p>Paragraph 3 - nth-of-type(3)</p>
+                        <span>Span element</span>
+                        <p>Paragraph 4 - nth-of-type(4)</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>:first-child, :last-child, :only-child</h3>
+                    <ul class="special-list">
+                        <li>First Item - :first-child</li>
+                        <li>Middle Item</li>
+                        <li>Middle Item</li>
+                        <li>Last Item - :last-child</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>:checked and :disabled States</h3>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox"> Unchecked - :checked pseudo-class
+                        </label>
+                        <label>
+                            <input type="checkbox" checked> Checked - :checked pseudo-class
+                        </label>
+                        <label>
+                            <input type="radio" name="group" value="1"> Radio Option 1
+                        </label>
+                        <label>
+                            <input type="radio" name="group" value="2" checked> Radio Option 2 - Checked
+                        </label>
+                        <label>
+                            <input type="text" disabled value="Disabled input"> :disabled pseudo-class
+                        </label>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <p><strong>Common Pseudo-Classes:</strong></p>
+                    <code>:hover - Mouse over</code>
+                    <code>:active - Being clicked</code>
+                    <code>:focus - Has focus</code>
+                    <code>:nth-child(n) - Position in siblings</code>
+                    <code>:first-child / :last-child</code>
+                    <code>:checked - Checkbox/radio checked</code>
+                </div>
+            </section>
+
+            <!-- Section 3: Pseudo-Elements -->
+            <section class="selector-section">
+                <h2>3. Pseudo-Elements</h2>
+                <p class="section-description">Add virtual elements before/after or style first letter/line</p>
+
+                <div class="subsection">
+                    <h3>::before and ::after</h3>
+                    <div class="pseudo-element-demo">
+                        <div class="box-with-before">Content with ::before</div>
+                        <div class="box-with-after">Content with ::after</div>
+                        <div class="box-with-both">Content with both ::before and ::after</div>
+                        <div class="list-with-bullets">
+                            <p class="bullet-item">First item with ::before bullet</p>
+                            <p class="bullet-item">Second item with ::before bullet</p>
+                            <p class="bullet-item">Third item with ::before bullet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>::first-letter and ::first-line</h3>
+                    <div class="text-styling">
+                        <p class="first-letter-demo">This paragraph has a styled first letter using ::first-letter pseudo-element. The first letter will be larger and styled differently.</p>
+                        <p class="first-line-demo">This paragraph has a styled first line using ::first-line pseudo-element. The first line will be displayed in uppercase and bold styling regardless of where the line breaks.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>::selection Pseudo-Element</h3>
+                    <div class="selection-demo">
+                        <p class="custom-selection">Try selecting this text to see the custom ::selection styling. The selected text will have a unique background and text color.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>::placeholder Pseudo-Element</h3>
+                    <div class="placeholder-group">
+                        <input type="text" placeholder="Custom styled placeholder ::placeholder">
+                        <textarea placeholder="Placeholder in textarea with custom styling"></textarea>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <p><strong>Pseudo-Elements:</strong></p>
+                    <code>::before - Insert content before</code>
+                    <code>::after - Insert content after</code>
+                    <code>::first-letter - First letter styling</code>
+                    <code>::first-line - First line styling</code>
+                    <code>::selection - Selected text styling</code>
+                    <code>::placeholder - Input placeholder styling</code>
+                </div>
+            </section>
+
+            <!-- Section 4: Combinators -->
+            <section class="selector-section">
+                <h2>4. Combinators</h2>
+                <p class="section-description">Select elements based on their relationships</p>
+
+                <div class="subsection">
+                    <h3>Descendant Combinator (space)</h3>
+                    <div class="combinator-demo">
+                        <div class="parent">
+                            <p>Direct child - (descendant)</p>
+                            <div>
+                                <p>Nested child - (descendant)</p>
+                            </div>
+                            <section>
+                                <p>Deeply nested - (descendant)</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Child Combinator (>)</h3>
+                    <div class="combinator-demo">
+                        <ul class="list-parent">
+                            <li>Direct child - (>)</li>
+                            <li>Direct child - (>)</li>
+                            <li>
+                                Nested item
+                                <ul>
+                                    <li>Not a direct child</li>
+                                    <li>Not a direct child</li>
+                                </ul>
+                            </li>
+                            <li>Direct child - (>)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Adjacent Sibling Combinator (+)</h3>
+                    <div class="combinator-demo">
+                        <div>
+                            <h4>Heading 1</h4>
+                            <p>Paragraph immediately after H4 - (adjacent sibling +)</p>
+                            <p>Not immediately after H4</p>
+                            <h4>Heading 2</h4>
+                            <p>Paragraph immediately after H4 - (adjacent sibling +)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>General Sibling Combinator (~)</h3>
+                    <div class="combinator-demo">
+                        <div>
+                            <span class="sibling-ref">Reference Element</span>
+                            <p>Sibling paragraph - (general sibling ~)</p>
+                            <p>Sibling paragraph - (general sibling ~)</p>
+                            <div>Not a sibling</div>
+                            <p>Sibling paragraph - (general sibling ~)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <p><strong>Combinator Types:</strong></p>
+                    <code>A B - Descendant (all descendants)</code>
+                    <code>A > B - Child (direct children only)</code>
+                    <code>A + B - Adjacent sibling (next element)</code>
+                    <code>A ~ B - General sibling (all following)</code>
+                </div>
+            </section>
+
+            <!-- Section 5: Complex Selectors -->
+            <section class="selector-section">
+                <h2>5. Complex Selector Combinations</h2>
+                <p class="section-description">Combine multiple selectors for powerful styling</p>
+
+                <div class="subsection">
+                    <h3>Attribute + Pseudo-Class</h3>
+                    <div class="complex-demo">
+                        <input type="text" placeholder="Text input + :focus">
+                        <input type="email" placeholder="Email input + :focus">
+                        <input type="text" disabled placeholder="Text input + :disabled">
+                        <button type="submit">Submit + :hover</button>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Combinator + Pseudo-Class</h3>
+                    <div class="complex-demo">
+                        <div class="card-container">
+                            <div class="card">Card 1 - nth-child(1)</div>
+                            <div class="card">Card 2 - nth-child(2)</div>
+                            <div class="card">Card 3 - nth-child(3)</div>
+                            <div class="card">Card 4 - nth-child(4)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Attribute + Combinator</h3>
+                    <div class="complex-demo">
+                        <form class="form-demo">
+                            <label>Username</label>
+                            <input type="text" required>
+                            <label>Email</label>
+                            <input type="email" required>
+                            <label>Password</label>
+                            <input type="password" required>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <p><strong>Complex Examples:</strong></p>
+                    <code>input[type="text"]:focus</code>
+                    <code>ul > li:nth-child(2n)</code>
+                    <code>a[href^="https"]:hover</code>
+                    <code>button[disabled]::before</code>
+                </div>
+            </section>
+
+            <!-- Section 6: Selector Reference -->
+            <section class="selector-section reference-section">
+                <h2>6. Complete Selector Reference</h2>
+
+                <div class="reference-grid">
+                    <div class="reference-card">
+                        <h3>Attribute Selectors</h3>
+                        <ul>
+                            <li>[attr] - Has attribute</li>
+                            <li>[attr="value"] - Exact value</li>
+                            <li>[attr^="value"] - Starts with</li>
+                            <li>[attr$="value"] - Ends with</li>
+                            <li>[attr*="value"] - Contains</li>
+                            <li>[attr~="value"] - Word match</li>
+                            <li>[attr|="value"] - Prefix match</li>
+                        </ul>
+                    </div>
+
+                    <div class="reference-card">
+                        <h3>Pseudo-Classes</h3>
+                        <ul>
+                            <li>:hover - Mouse over</li>
+                            <li>:active - Being pressed</li>
+                            <li>:focus - Has focus</li>
+                            <li>:visited - Link visited</li>
+                            <li>:nth-child(n) - Position</li>
+                            <li>:first-child - First sibling</li>
+                            <li>:last-child - Last sibling</li>
+                            <li>:checked - Checkbox checked</li>
+                            <li>:disabled - Disabled state</li>
+                            <li>:empty - No content</li>
+                        </ul>
+                    </div>
+
+                    <div class="reference-card">
+                        <h3>Pseudo-Elements</h3>
+                        <ul>
+                            <li>::before - Insert before</li>
+                            <li>::after - Insert after</li>
+                            <li>::first-letter - First letter</li>
+                            <li>::first-line - First line</li>
+                            <li>::selection - Selected text</li>
+                            <li>::placeholder - Placeholder text</li>
+                            <li>::cue - Video captions</li>
+                        </ul>
+                    </div>
+
+                    <div class="reference-card">
+                        <h3>Combinators</h3>
+                        <ul>
+                            <li>A B - Descendant</li>
+                            <li>A > B - Child</li>
+                            <li>A + B - Adjacent sibling</li>
+                            <li>A ~ B - General sibling</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <p>&copy; 2025 Advanced CSS Selectors | CSS Mastery</p>
+            <p class="footer-note">Master the power of CSS selectors for precise element styling</p>
+        </footer>
+    </div>
+</body>
+</html>

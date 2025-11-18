@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Exploration</title>
+    <link rel="stylesheet" href="boxmodel.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>Box Model Exploration</h1>
+            <p class="tagline">Understanding Content, Padding, Border, and Margin</p>
+        </header>
+
+        <div class="demo-grid">
+            <div class="demo-section">
+                <h2>Default Box Model (content-box)</h2>
+                <div class="box-wrapper">
+                    <div class="box-demo default-box">
+                        <div class="content-layer">Content Area</div>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <p class="info-title">Default Behavior</p>
+                    <p class="info-text">With <strong>box-sizing: content-box</strong>, the width and height properties apply only to the content area. Padding and border are added on top.</p>
+                </div>
+            </div>
+
+            <div class="demo-section">
+                <h2>Optimized Box Model (border-box)</h2>
+                <div class="box-wrapper">
+                    <div class="box-demo border-box-model">
+                        <div class="content-layer">Content Area</div>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <p class="info-title">Border-Box Sizing</p>
+                    <p class="info-text">With <strong>box-sizing: border-box</strong>, the width and height include content, padding, and border. This is more predictable for layouts.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="layers-section">
+            <h2>Box Model Layers Breakdown</h2>
+            <div class="layers-demo">
+                <div class="layer-visual">
+                    <div class="margin-visual">
+                        <div class="margin-label">Margin</div>
+                        <div class="border-visual">
+                            <div class="border-label">Border</div>
+                            <div class="padding-visual">
+                                <div class="padding-label">Padding</div>
+                                <div class="content-visual">
+                                    <div class="content-label">Content</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layers-info">
+                    <div class="layer-card content-card">
+                        <h3>Content Area</h3>
+                        <p>The innermost area where text, images, and other elements are displayed. Dimensions are set by width and height properties.</p>
+                        <code>width: 200px; height: 100px;</code>
+                    </div>
+
+                    <div class="layer-card padding-card">
+                        <h3>Padding</h3>
+                        <p>Space between content and border. Creates internal spacing and separates content from the border. Padding extends the background color.</p>
+                        <code>padding: 20px;</code>
+                    </div>
+
+                    <div class="layer-card border-card">
+                        <h3>Border</h3>
+                        <p>A line drawn around padding and content. Can have different styles (solid, dashed, dotted) and colors. Adds visual definition.</p>
+                        <code>border: 3px solid #667eea;</code>
+                    </div>
+
+                    <div class="layer-card margin-card">
+                        <h3>Margin</h3>
+                        <p>Space outside the border. Creates spacing between this element and other elements. Does not affect background color.</p>
+                        <code>margin: 30px;</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison-section">
+            <h2>Visual Comparison: Default vs Border-Box</h2>
+            <div class="comparison-container">
+                <div class="comparison-item">
+                    <h3>Content-Box (Default)</h3>
+                    <div class="comparison-box content-box-example">
+                        <div class="inner-content">300×200</div>
+                    </div>
+                    <div class="calculation">
+                        <p><strong>Total Width:</strong></p>
+                        <p class="calc-line">300px (content) + 20px (left padding) + 20px (right padding) + 3px (left border) + 3px (right border) = <span class="result">346px</span></p>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <h3>Border-Box Model</h3>
+                    <div class="comparison-box border-box-example">
+                        <div class="inner-content">300×200</div>
+                    </div>
+                    <div class="calculation">
+                        <p><strong>Total Width:</strong></p>
+                        <p class="calc-line">300px (includes content + padding + border) = <span class="result">300px</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive-section">
+            <h2>Interactive Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>Collapsed Margins</h3>
+                    <div class="example-demo">
+                        <div class="box-item box1">Box 1</div>
+                        <div class="box-item box2">Box 2</div>
+                    </div>
+                    <p class="example-text">When two boxes have adjacent margins, they collapse into the larger margin. Box 1 has margin-bottom: 30px and Box 2 has margin-top: 20px, but only 30px separates them.</p>
+                </div>
+
+                <div class="example-card">
+                    <h3>Padding vs Margin</h3>
+                    <div class="example-demo">
+                        <div class="box-with-padding">Padding Inside</div>
+                        <div class="box-with-margin">Margin Outside</div>
+                    </div>
+                    <p class="example-text">Padding is inside the border and adds to the background color. Margin is outside the border and creates space between elements without affecting background.</p>
+                </div>
+
+                <div class="example-card">
+                    <h3>Negative Margins</h3>
+                    <div class="example-demo">
+                        <div class="box-normal">Normal Position</div>
+                        <div class="box-negative-margin">Negative Margin</div>
+                    </div>
+                    <p class="example-text">Negative margins pull elements closer or even overlap them. The second box has margin-top: -15px, pulling it up into the space above.</p>
+                </div>
+
+                <div class="example-card">
+                    <h3>Auto Margins</h3>
+                    <div class="example-demo">
+                        <div class="box-centered">Centered with margin: auto;</div>
+                    </div>
+                    <p class="example-text">Using margin: auto with a fixed width centers the element horizontally. This is a common technique for centering blocks without Flexbox.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reference-section">
+            <h2>Box Model Reference</h2>
+            <div class="reference-grid">
+                <div class="ref-card">
+                    <h3>Content</h3>
+                    <ul>
+                        <li>Set with: width, height</li>
+                        <li>Contains text and images</li>
+                        <li>Background color covers content + padding</li>
+                    </ul>
+                </div>
+
+                <div class="ref-card">
+                    <h3>Padding</h3>
+                    <ul>
+                        <li>Set with: padding property</li>
+                        <li>Creates internal space</li>
+                        <li>Individual sides: padding-top, padding-right, etc.</li>
+                        <li>Shorthand: padding: top right bottom left</li>
+                    </ul>
+                </div>
+
+                <div class="ref-card">
+                    <h3>Border</h3>
+                    <ul>
+                        <li>Set with: border property</li>
+                        <li>Syntax: border: width style color</li>
+                        <li>Styles: solid, dashed, dotted, double, groove</li>
+                        <li>Example: border: 2px solid #667eea;</li>
+                    </ul>
+                </div>
+
+                <div class="ref-card">
+                    <h3>Margin</h3>
+                    <ul>
+                        <li>Set with: margin property</li>
+                        <li>Creates external space</li>
+                        <li>Can be negative for overlap</li>
+                        <li>Can be auto for centering</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 Box Model Exploration | CSS Fundamentals</p>
+        </footer>
+    </div>
+</body>
+</html>

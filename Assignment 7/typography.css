@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background: #f9f8f6;
+    color: #333;
+    line-height: 1.8;
+}
+
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.site-header {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    color: white;
+}
+
+.site-header h1 {
+    font-family: 'Lora', serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3em;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    opacity: 0.95;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+}
+
+.article {
+    background: white;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.article-title {
+    font-family: 'Lora', serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.article-intro {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+}
+
+.article-section {
+    margin-bottom: 40px;
+}
+
+.article-section h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #764ba2;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.article-section p {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05em;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 18px;
+    line-height: 1.85;
+    letter-spacing: 0.2px;
+    text-align: justify;
+}
+
+.article-section p::first-letter {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #667eea;
+    margin-right: 4px;
+    float: left;
+    line-height: 1;
+}
+
+.article-section p::first-line {
+    font-weight: 600;
+    color: #555;
+}
+
+mark {
+    background: linear-gradient(120deg, #ffc700 0%, #ff6b6b 100%);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+strong {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #667eea;
+    letter-spacing: 0.5px;
+}
+
+em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: #764ba2;
+    font-weight: 600;
+}
+
+.conclusion {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 2px solid #eee;
+}
+
+.conclusion h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 25px;
+}
+
+.takeaway-list {
+    list-style: none;
+    padding: 0;
+}
+
+.takeaway-list li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.05em;
+    font-weight: 400;
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    color: #555;
+    line-height: 1.7;
+}
+
+.takeaway-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #667eea;
+}
+
+.info-box h4 {
+    font-family: 'Lora', serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.weight-light {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.95em;
+    color: #888;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.weight-normal {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.weight-semi {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.05em;
+    color: #333;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.weight-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #667eea;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95em;
+    color: #555;
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.tips-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #764ba2;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    background: #333;
+    color: white;
+    border-radius: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 20px 15px;
+    }
+
+    .site-header {
+        padding: 40px 15px;
+        margin-bottom: 30px;
+    }
+
+    .site-header h1 {
+        font-size: 2.2em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .article {
+        padding: 30px 20px;
+    }
+
+    .article-title {
+        font-size: 2em;
+    }
+
+    .article-section h3 {
+        font-size: 1.5em;
+    }
+
+    .article-section p {
+        font-size: 1em;
+        text-align: left;
+    }
+
+    .sidebar {
+        flex-direction: row;
+    }
+
+    .info-box {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        padding: 15px 10px;
+    }
+
+    .site-header h1 {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .article {
+        padding: 20px 15px;
+    }
+
+    .article-title {
+        font-size: 1.6em;
+    }
+
+    .article-intro {
+        font-size: 1em;
+    }
+
+    .article-section h3 {
+        font-size: 1.3em;
+    }
+
+    .article-section p {
+        font-size: 0.95em;
+    }
+
+    .sidebar {
+        flex-direction: column;
+    }
+}

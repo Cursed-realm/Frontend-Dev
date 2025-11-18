@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadows and Depth Effect Layout</title>
+    <link rel="stylesheet" href="shadows.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="main-header">
+            <h1 class="page-title">Shadows & Depth Effects</h1>
+            <p class="page-subtitle">Master box-shadow and text-shadow for stunning visual depth</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Section 1: Basic Box Shadow Examples -->
+            <section class="shadow-section">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Box-Shadow Styles</h2>
+                    <p class="section-description">Explore different box-shadow techniques for depth and dimension</p>
+                </div>
+
+                <div class="cards-container">
+                    <!-- Card 1: Subtle Flat Shadow -->
+                    <div class="card card-subtle">
+                        <div class="card-header">
+                            <div class="avatar avatar-1">
+                                <span>A</span>
+                            </div>
+                            <h3 class="card-title">Subtle Shadow</h3>
+                        </div>
+                        <div class="card-content">
+                            <p class="role">Minimal Depth</p>
+                            <p class="description">A subtle, soft shadow that adds minimal depth without being prominent.</p>
+                            <div class="shadow-info">
+                                <p><strong>Shadow:</strong> 0 2px 8px rgba(0, 0, 0, 0.1)</p>
+                                <p><strong>Use Case:</strong> Clean, minimal designs</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="tag">Minimal</span>
+                            <span class="tag">Flat</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Medium Layered Shadow -->
+                    <div class="card card-medium">
+                        <div class="card-header">
+                            <div class="avatar avatar-2">
+                                <span>B</span>
+                            </div>
+                            <h3 class="card-title">Medium Shadow</h3>
+                        </div>
+                        <div class="card-content">
+                            <p class="role">Balanced Depth</p>
+                            <p class="description">A layered shadow combining multiple shadows for sophisticated depth perception.</p>
+                            <div class="shadow-info">
+                                <p><strong>Shadow:</strong> 0 4px 12px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1)</p>
+                                <p><strong>Use Case:</strong> Cards and components</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="tag">Balanced</span>
+                            <span class="tag">Layered</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Deep Dramatic Shadow -->
+                    <div class="card card-dramatic">
+                        <div class="card-header">
+                            <div class="avatar avatar-3">
+                                <span>C</span>
+                            </div>
+                            <h3 class="card-title">Dramatic Shadow</h3>
+                        </div>
+                        <div class="card-content">
+                            <p class="role">Intense Depth</p>
+                            <p class="description">A deep, dramatic shadow creating strong visual separation and prominent floating effect.</p>
+                            <div class="shadow-info">
+                                <p><strong>Shadow:</strong> 0 10px 30px rgba(0, 0, 0, 0.3), 0 20px 50px rgba(0, 0, 0, 0.2)</p>
+                                <p><strong>Use Case:</strong> Hero sections, emphasis</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="tag">Dramatic</span>
+                            <span class="tag">Bold</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Profile Cards with Hover Effects -->
+            <section class="shadow-section profile-section">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Profile Cards - Interactive</h2>
+                    <p class="section-description">Hover over the cards to see them lift with enhanced shadows</p>
+                </div>
+
+                <div class="cards-container">
+                    <!-- Profile Card 1: Developer -->
+                    <div class="profile-card profile-card-1">
+                        <div class="profile-image">
+                            <div class="image-placeholder developer">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="30" r="15" fill="white" opacity="0.9"/>
+                                    <ellipse cx="50" cy="65" rx="20" ry="25" fill="white" opacity="0.9"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="profile-name">Alex Developer</h3>
+                            <p class="profile-role">Web Developer</p>
+                            <p class="profile-bio">Passionate about creating beautiful and functional web experiences with modern technologies.</p>
+                            <div class="profile-skills">
+                                <span class="skill">HTML/CSS</span>
+                                <span class="skill">JavaScript</span>
+                                <span class="skill">React</span>
+                            </div>
+                            <button class="profile-button">View Profile</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 2: Designer -->
+                    <div class="profile-card profile-card-2">
+                        <div class="profile-image">
+                            <div class="image-placeholder designer">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="30" r="15" fill="white" opacity="0.9"/>
+                                    <ellipse cx="50" cy="65" rx="20" ry="25" fill="white" opacity="0.9"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="profile-name">Jordan Designer</h3>
+                            <p class="profile-role">UI/UX Designer</p>
+                            <p class="profile-bio">Creating intuitive user interfaces and delightful experiences through thoughtful design principles.</p>
+                            <div class="profile-skills">
+                                <span class="skill">UI Design</span>
+                                <span class="skill">UX Research</span>
+                                <span class="skill">Figma</span>
+                            </div>
+                            <button class="profile-button">View Profile</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 3: Manager -->
+                    <div class="profile-card profile-card-3">
+                        <div class="profile-image">
+                            <div class="image-placeholder manager">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="50" cy="30" r="15" fill="white" opacity="0.9"/>
+                                    <ellipse cx="50" cy="65" rx="20" ry="25" fill="white" opacity="0.9"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="profile-name">Casey Manager</h3>
+                            <p class="profile-role">Project Manager</p>
+                            <p class="profile-bio">Coordinating teams and delivering projects on time with excellent communication and leadership.</p>
+                            <div class="profile-skills">
+                                <span class="skill">Leadership</span>
+                                <span class="skill">Agile</span>
+                                <span class="skill">Planning</span>
+                            </div>
+                            <button class="profile-button">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Text Shadow Examples -->
+            <section class="shadow-section text-shadow-section">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Text-Shadow Effects</h2>
+                    <p class="section-description">Enhance typography with depth using text-shadow</p>
+                </div>
+
+                <div class="text-shadow-container">
+                    <!-- Text Shadow 1: Subtle -->
+                    <div class="text-shadow-box shadow-subtle">
+                        <h3 class="shadow-heading subtle-shadow">Subtle Text Shadow</h3>
+                        <p class="shadow-description">A light shadow beneath text for subtle depth</p>
+                        <code>text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);</code>
+                    </div>
+
+                    <!-- Text Shadow 2: Medium -->
+                    <div class="text-shadow-box shadow-medium">
+                        <h3 class="shadow-heading medium-shadow">Medium Text Shadow</h3>
+                        <p class="shadow-description">A balanced shadow for professional depth</p>
+                        <code>text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);</code>
+                    </div>
+
+                    <!-- Text Shadow 3: Dramatic -->
+                    <div class="text-shadow-box shadow-dramatic">
+                        <h3 class="shadow-heading dramatic-shadow">Dramatic Text Shadow</h3>
+                        <p class="shadow-description">A strong shadow for bold, prominent text</p>
+                        <code>text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);</code>
+                    </div>
+
+                    <!-- Text Shadow 4: Colored -->
+                    <div class="text-shadow-box shadow-colored">
+                        <h3 class="shadow-heading colored-shadow">Colored Text Shadow</h3>
+                        <p class="shadow-description">A colored shadow for creative effects</p>
+                        <code>text-shadow: 2px 2px 4px #FF6B6B;</code>
+                    </div>
+
+                    <!-- Text Shadow 5: Multiple -->
+                    <div class="text-shadow-box shadow-multiple">
+                        <h3 class="shadow-heading multiple-shadow">Multiple Text Shadows</h3>
+                        <p class="shadow-description">Layered shadows for artistic depth</p>
+                        <code>text-shadow: 1px 1px 0 #FF6B6B, 2px 2px 0 #4ECDC4, 3px 3px 0 #FFE66D;</code>
+                    </div>
+
+                    <!-- Text Shadow 6: Glow -->
+                    <div class="text-shadow-box shadow-glow">
+                        <h3 class="shadow-heading glow-shadow">Glowing Text Shadow</h3>
+                        <p class="shadow-description">A glowing effect with multiple shadow layers</p>
+                        <code>text-shadow: 0 0 5px #667eea, 0 0 10px #764ba2, 0 0 15px #f093fb;</code>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Advanced Shadow Techniques -->
+            <section class="shadow-section advanced-section">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Advanced Shadow Techniques</h2>
+                    <p class="section-description">Combine shadows with transforms for sophisticated effects</p>
+                </div>
+
+                <div class="cards-container">
+                    <!-- Inset Shadow Card -->
+                    <div class="card advanced-card inset-card">
+                        <div class="card-visual inset-visual"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Inset Shadow</h3>
+                            <p class="description">Creates an inset shadow that makes elements appear pressed or recessed.</p>
+                            <p class="code-snippet">box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);</p>
+                            <ul class="techniques-list">
+                                <li>Creates depth inward</li>
+                                <li>Perfect for input fields</li>
+                                <li>Forms visual containment</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Glow Shadow Card -->
+                    <div class="card advanced-card glow-card">
+                        <div class="card-visual glow-visual"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Glow Shadow</h3>
+                            <p class="description">Multiple layered shadows create a glowing effect around elements.</p>
+                            <p class="code-snippet">box-shadow: 0 0 20px rgba(102, 126, 234, 0.6), 0 0 40px rgba(102, 126, 234, 0.3);</p>
+                            <ul class="techniques-list">
+                                <li>Creates glowing halos</li>
+                                <li>Draws attention to elements</li>
+                                <li>Works with colors</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Colored Shadow Card -->
+                    <div class="card advanced-card colored-shadow-card">
+                        <div class="card-visual colored-visual"></div>
+                        <div class="card-content">
+                            <h3 class="card-title">Colored Shadow</h3>
+                            <p class="description">Using colors in shadows creates dynamic and artistic effects.</p>
+                            <p class="code-snippet">box-shadow: 10px 10px 20px rgba(255, 107, 107, 0.3);</p>
+                            <ul class="techniques-list">
+                                <li>Adds color to depth</li>
+                                <li>Creates mood</li>
+                                <li>Enhances visual interest</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Shadow Reference Guide -->
+            <section class="shadow-section reference-section">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Shadow Syntax Reference</h2>
+                    <p class="section-description">Quick reference for box-shadow and text-shadow properties</p>
+                </div>
+
+                <div class="reference-grid">
+                    <!-- Box Shadow Reference -->
+                    <div class="reference-card">
+                        <h3>Box-Shadow Syntax</h3>
+                        <div class="reference-content">
+                            <p><strong>Basic Syntax:</strong></p>
+                            <code>box-shadow: offset-x offset-y blur-radius spread-radius color;</code>
+                            <p><strong>Multiple Shadows:</strong></p>
+                            <code>box-shadow: shadow1, shadow2, shadow3;</code>
+                            <p><strong>Inset Shadow:</strong></p>
+                            <code>box-shadow: inset offset-x offset-y blur-radius color;</code>
+                        </div>
+                    </div>
+
+                    <!-- Text Shadow Reference -->
+                    <div class="reference-card">
+                        <h3>Text-Shadow Syntax</h3>
+                        <div class="reference-content">
+                            <p><strong>Basic Syntax:</strong></p>
+                            <code>text-shadow: offset-x offset-y blur-radius color;</code>
+                            <p><strong>Multiple Shadows:</strong></p>
+                            <code>text-shadow: shadow1, shadow2, shadow3;</code>
+                            <p><strong>Example with Blur:</strong></p>
+                            <code>text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);</code>
+                        </div>
+                    </div>
+
+                    <!-- Shadow Parameters Reference -->
+                    <div class="reference-card">
+                        <h3>Parameters Guide</h3>
+                        <div class="reference-content">
+                            <p><strong>Offset-X:</strong> Horizontal distance (negative = left)</p>
+                            <p><strong>Offset-Y:</strong> Vertical distance (negative = up)</p>
+                            <p><strong>Blur-Radius:</strong> Blur amount (0 = sharp, higher = softer)</p>
+                            <p><strong>Spread-Radius:</strong> Shadow size (box-shadow only)</p>
+                            <p><strong>Color:</strong> rgba or hex color value</p>
+                        </div>
+                    </div>
+
+                    <!-- Pro Tips -->
+                    <div class="reference-card">
+                        <h3>Pro Tips</h3>
+                        <div class="reference-content">
+                            <ul>
+                                <li>Use subtle shadows for a modern look</li>
+                                <li>Layer multiple shadows for depth</li>
+                                <li>Keep blur-radius less than spread for sharp edges</li>
+                                <li>Use rgba() for better color blending</li>
+                                <li>Test on different backgrounds</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="main-footer">
+            <p>&copy; 2025 Shadows and Depth Effects | CSS Mastery</p>
+            <p class="footer-note">Explore the power of shadows to add dimension and depth to your designs</p>
+        </footer>
+    </div>
+</body>
+</html>

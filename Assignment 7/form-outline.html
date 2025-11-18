@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outline and Focus Styling Form</title>
+    <link rel="stylesheet" href="form-outline.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Form Outline & Focus Styling</h1>
+            <p>Interactive form demonstrating outline, focus states, and accessibility</p>
+        </header>
+
+        <main class="main">
+            <section class="form-section">
+                <h2>Contact Form</h2>
+                <p class="form-description">Click on any field to see the outline styling in action</p>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="fullname" 
+                            name="fullname" 
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="Enter your phone number"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            placeholder="What is this about?"
+                        >
+                    </div>
+
+                    <div class="form-group textarea-group">
+                        <label for="message">Message</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="5"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="subscribe">
+                            Subscribe to our newsletter
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            I agree to the terms and conditions
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Priority Level</label>
+                        <select id="priority" name="priority">
+                            <option value="">Select priority...</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn-submit">Send Message</button>
+                        <button type="reset" class="btn-reset">Clear Form</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="outline-examples">
+                <h2>Outline Style Examples</h2>
+
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h3>Solid Outline</h3>
+                        <input 
+                            type="text" 
+                            placeholder="outline-style: solid" 
+                            class="outline-solid"
+                        >
+                        <code>outline: 2px solid #667eea;</code>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>Dashed Outline</h3>
+                        <input 
+                            type="text" 
+                            placeholder="outline-style: dashed" 
+                            class="outline-dashed"
+                        >
+                        <code>outline: 2px dashed #764ba2;</code>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>Dotted Outline</h3>
+                        <input 
+                            type="text" 
+                            placeholder="outline-style: dotted" 
+                            class="outline-dotted"
+                        >
+                        <code>outline: 2px dotted #f5576c;</code>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>Double Outline</h3>
+                        <input 
+                            type="text" 
+                            placeholder="outline-style: double" 
+                            class="outline-double"
+                        >
+                        <code>outline: 3px double #4facfe;</code>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>With Offset (+8px)</h3>
+                        <input 
+                            type="text" 
+                            placeholder="outline-offset: 8px" 
+                            class="outline-offset"
+                        >
+                        <code>outline-offset: 8px;</code>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>Negative Offset (-3px)</h3>
+                        <input 
+                            type="text" 
+                            placeholder="outline-offset: -3px" 
+                            class="outline-negative"
+                        >
+                        <code>outline-offset: -3px;</code>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <h2>Form Features</h2>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>✨ Focus State</h3>
+                        <p>Each input displays a vibrant outline when focused, providing clear visual feedback to users about which field is active.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🎨 Color Coding</h3>
+                        <p>Different input types have different outline colors on focus for better visual organization and accessibility.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>📏 Padding & Spacing</h3>
+                        <p>Generous padding inside inputs combined with consistent spacing between form groups creates a comfortable, easy-to-use interface.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🔲 Border Radius</h3>
+                        <p>Soft, rounded corners (8px) give the form a modern, friendly appearance while maintaining professional aesthetics.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🌟 Subtle Shadows</h3>
+                        <p>Light box-shadows add depth and visual separation without overwhelming the clean, minimalist design approach.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>♿ Accessibility</h3>
+                        <p>Clear outlines on focus states meet WCAG standards, ensuring the form is usable for all users including those with visual impairments.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reference-section">
+                <h2>Outline Properties Reference</h2>
+
+                <div class="reference-cards">
+                    <div class="ref-card">
+                        <h3>outline</h3>
+                        <p>Shorthand for outline-width, outline-style, and outline-color</p>
+                        <code>outline: 2px solid #667eea;</code>
+                    </div>
+
+                    <div class="ref-card">
+                        <h3>outline-width</h3>
+                        <p>Sets the width of the outline (thin, medium, thick, or px)</p>
+                        <code>outline-width: 2px;</code>
+                    </div>
+
+                    <div class="ref-card">
+                        <h3>outline-style</h3>
+                        <p>Sets the style: solid, dashed, dotted, double, groove, ridge, inset, outset</p>
+                        <code>outline-style: solid;</code>
+                    </div>
+
+                    <div class="ref-card">
+                        <h3>outline-color</h3>
+                        <p>Sets the color of the outline</p>
+                        <code>outline-color: #667eea;</code>
+                    </div>
+
+                    <div class="ref-card">
+                        <h3>outline-offset</h3>
+                        <p>Sets the space between outline and element (positive moves out, negative moves in)</p>
+                        <code>outline-offset: 8px;</code>
+                    </div>
+
+                    <div class="ref-card">
+                        <h3>Focus Pseudo-Class</h3>
+                        <p>Apply styles when an element has focus</p>
+                        <code>input:focus { outline: 2px solid blue; }</code>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Form Outline & Focus Styling | Web Design Fundamentals</p>
+        </footer>
+    </div>
+</body>
+</html>
+#write a code for timetable
