@@ -1,0 +1,34 @@
+.body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin:12px;
+    padding:8px;
+    background-color:burlywood;
+}
+.container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap wrap;
+    text-align: center;
+    font-family: fantasy;
+}
+.card{
+    flex:1 1 22%;
+    background-color: wheat;
+    padding: 20px;
+    margin:10px;
+    border-radius: 12px;
+    transition: background-color 0.4s ease;
+}
+.card:hover{
+    background-color: rgb(170, 64, 26);
+}
+@media(max-width:900px){
+    .card{
+        flex:1 1 45%;
+    }
+}
+@media(max-width:600px){
+    .card{
+        flex:1 1 100%;
+    }
+}
