@@ -1,0 +1,451 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand i {
+    margin-right: 0.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #60a5fa !important;
+}
+
+/* Section Title */
+.display-4 {
+    color: #1a202c;
+}
+
+/* Billing Switch */
+.form-switch .form-check-input {
+    width: 3rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.form-switch .form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Pricing Card Base Styling */
+.pricing-card {
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    background: white;
+    position: relative;
+    overflow: visible;
+}
+
+.pricing-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    border-color: #0d6efd;
+}
+
+/* Plan Icons */
+.plan-icon i {
+    font-size: 3.5rem;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover .plan-icon i {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Card Title */
+.card-title {
+    font-size: 2rem;
+    color: #1a202c;
+}
+
+/* Price Section */
+.price-section {
+    padding: 1rem 0;
+}
+
+.price-section .display-4 {
+    color: #1a202c;
+    line-height: 1;
+}
+
+/* Pro Plan Specific Styling */
+.pro-plan {
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%) !important;
+    border: 3px solid #ffc107;
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.pro-plan:hover {
+    transform: scale(1.08) translateY(-15px);
+    box-shadow: 0 25px 50px rgba(13, 110, 253, 0.4) !important;
+}
+
+.pro-plan .card-title {
+    color: white;
+}
+
+.pro-plan .price-section .display-4 {
+    color: white;
+}
+
+/* Popular Badge */
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.popular-badge .badge {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+}
+
+/* Button Styling */
+.btn {
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    border-width: 2px;
+}
+
+.btn-outline-primary {
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+}
+
+.btn-light {
+    background-color: white;
+    color: #0d6efd;
+    border: 2px solid white;
+}
+
+.btn-light:hover {
+    background-color: #ffc107;
+    color: #1a202c;
+    border-color: #ffc107;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+}
+
+/* Features List */
+.features-list {
+    margin-top: 2rem;
+}
+
+.features-list h6 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+}
+
+.pro-plan .features-list h6 {
+    color: white;
+}
+
+.features-list ul {
+    padding-left: 0;
+}
+
+.features-list li {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.features-list i {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.features-list .bi-check-circle-fill {
+    color: #10b981;
+}
+
+.pro-plan .features-list .bi-check-circle-fill {
+    color: #ffc107;
+}
+
+.features-list .bi-x-circle-fill {
+    color: #d1d5db;
+}
+
+/* Shadow Utilities */
+.shadow-sm {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2) !important;
+}
+
+/* FAQ Section */
+.accordion-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-button {
+    font-weight: 600;
+    background-color: white;
+    color: #1a202c;
+    padding: 1.25rem 1.5rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #eff6ff;
+    color: #0d6efd;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+}
+
+.accordion-button::after {
+    background-size: 1.25rem;
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    background-color: #f9fafb;
+}
+
+/* Trust Section */
+.trust-badge {
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+    transform: translateY(-5px);
+}
+
+.trust-badge i {
+    transition: transform 0.3s ease;
+}
+
+.trust-badge:hover i {
+    transform: scale(1.2);
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer a:hover {
+    color: #60a5fa !important;
+}
+
+/* Badge Styling */
+.badge {
+    padding: 0.5rem 0.85rem;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.badge.bg-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pricing-card {
+    animation: fadeInUp 0.6s ease;
+}
+
+.col-md-4:nth-child(1) .pricing-card {
+    animation-delay: 0.1s;
+}
+
+.col-md-4:nth-child(2) .pricing-card {
+    animation-delay: 0.2s;
+}
+
+.col-md-4:nth-child(3) .pricing-card {
+    animation-delay: 0.3s;
+}
+
+/* Pulse Animation for Pro Plan */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2);
+    }
+    50% {
+        box-shadow: 0 20px 45px rgba(13, 110, 253, 0.3);
+    }
+}
+
+.pro-plan {
+    animation: fadeInUp 0.6s ease 0.2s backwards, pulse 3s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .pro-plan {
+        transform: scale(1);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .pro-plan:hover {
+        transform: scale(1.03) translateY(-15px);
+    }
+    
+    .popular-badge {
+        top: -12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .pricing-card {
+        margin-bottom: 2rem;
+    }
+    
+    .plan-icon i {
+        font-size: 2.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.75rem;
+    }
+    
+    .price-section .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .features-list li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .price-section .display-4 {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Card Body Padding */
+.card-body {
+    padding: 2rem !important;
+}
+
+/* List Items Alignment */
+.features-list li {
+    line-height: 1.6;
+}
+
+/* Hover Effect on Feature Items */
+.features-list li {
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.features-list li:hover {
+    background-color: #f9fafb;
+    padding-left: 1rem;
+}
+
+.pro-plan .features-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Text Styling */
+.text-muted {
+    color: #6b7280 !important;
+}
+
+.pro-plan .opacity-75 {
+    opacity: 0.85 !important;
+}
+
+/* Form Switch Enhancement */
+.form-check-input {
+    transition: all 0.3s ease;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Background Light Rounded Section */
+.bg-light.rounded {
+    background-color: white !important;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}

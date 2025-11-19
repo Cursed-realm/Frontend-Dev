@@ -1,0 +1,388 @@
+/* Blog Pagination Custom Styles */
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 i {
+    margin-right: 0.5rem;
+}
+
+header a:hover {
+    opacity: 0.8;
+}
+
+/* Page Title */
+.display-6 {
+    color: #1a202c;
+}
+
+/* Blog Post Card Styling */
+.blog-post {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.blog-post img {
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover img {
+    transform: scale(1.05);
+}
+
+.blog-post .card-body {
+    padding: 1.5rem;
+}
+
+.blog-post .card-title a {
+    transition: color 0.3s ease;
+}
+
+.blog-post .card-title a:hover {
+    color: #0d6efd !important;
+}
+
+/* Badge Styling */
+.badge {
+    padding: 0.4rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    border-radius: 8px;
+}
+
+/* Button Styling */
+.btn-sm {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    transform: translateX(3px);
+}
+
+/* Bootstrap Pagination Styling */
+.pagination {
+    margin: 2rem 0;
+}
+
+.page-item {
+    margin: 0 0.25rem;
+}
+
+.page-link {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.625rem 1rem;
+    color: #495057;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: #e9ecef;
+    border-color: #0d6efd;
+    color: #0d6efd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-link:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Active Page Item */
+.page-item.active .page-link {
+    background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+    border-color: #0d6efd;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+/* Previous/Next Links */
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+    font-weight: 600;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.page-item:first-child .page-link i,
+.page-item:last-child .page-link i {
+    transition: transform 0.3s ease;
+}
+
+.page-item:first-child .page-link:hover i {
+    transform: translateX(-3px);
+}
+
+.page-item:last-child .page-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Disabled Page Item */
+.page-item.disabled .page-link {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+/* Center Pagination */
+.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Pager Section Styling */
+.pager-section {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+}
+
+/* Pager Buttons */
+.pager-btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border-width: 2px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pager-btn:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(108, 117, 125, 0.3);
+}
+
+.pager-btn i {
+    transition: transform 0.3s ease;
+}
+
+.pager-btn:hover i.bi-arrow-left {
+    transform: translateX(-3px);
+}
+
+.pager-btn:hover i.bi-arrow-right {
+    transform: translateX(3px);
+}
+
+/* Divider */
+hr {
+    border-top: 2px solid #dee2e6;
+    opacity: 1;
+}
+
+/* Newsletter Card */
+.card.bg-light {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+}
+
+.input-group .form-control {
+    border: 2px solid #dee2e6;
+    padding: 0.75rem 1rem;
+}
+
+.input-group .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: none;
+}
+
+.input-group .btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.7;
+    transform: translateY(-3px);
+}
+
+/* Container Alignment */
+.container {
+    max-width: 1140px;
+}
+
+/* Responsive Image */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-post {
+    animation: fadeInUp 0.5s ease;
+}
+
+.blog-post:nth-child(1) { animation-delay: 0.1s; }
+.blog-post:nth-child(2) { animation-delay: 0.2s; }
+.blog-post:nth-child(3) { animation-delay: 0.3s; }
+.blog-post:nth-child(4) { animation-delay: 0.4s; }
+.blog-post:nth-child(5) { animation-delay: 0.5s; }
+
+/* Pagination Animation */
+.pagination {
+    animation: fadeInUp 0.6s ease;
+}
+
+.pager-section {
+    animation: fadeInUp 0.7s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-post .col-md-4 {
+        height: 200px;
+    }
+    
+    .page-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .page-item:first-child .page-link,
+    .page-item:last-child .page-link {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    /* Hide page numbers on mobile, keep prev/next */
+    .page-item:not(:first-child):not(:last-child):not(.active) {
+        display: none;
+    }
+    
+    .pager-section {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .pager-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .blog-post .row {
+        flex-direction: column;
+    }
+    
+    .blog-post img {
+        height: 200px;
+        width: 100%;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .display-6 {
+        font-size: 1.75rem;
+    }
+    
+    .pagination {
+        margin: 1.5rem 0;
+    }
+    
+    .page-link {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Shadow Utilities */
+.shadow-sm {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Text Utilities */
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Hover Effects for Links */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Card Hover State */
+.card {
+    transition: all 0.3s ease;
+}
+
+/* Page Info in Pager */
+.pager-section span {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+}
+
+/* Accessibility Focus States */
+.page-link:focus,
+.btn:focus,
+.form-control:focus {
+    outline: none;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Additional Spacing */
+.my-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}

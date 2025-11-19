@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="NotificationsDashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white py-4 mb-4">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h3 mb-0">
+                        <i class="bi bi-bell-fill"></i> Notifications Dashboard
+                    </h1>
+                </div>
+                <div>
+                    <span class="badge bg-light text-dark">
+                        <i class="bi bi-person-circle"></i> Aditya Kumar Sharma
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mb-5">
+        <!-- Summary Well Section -->
+        <div class="card mb-4 shadow-sm summary-well">
+            <div class="card-body bg-light p-4">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-3 mb-md-0">
+                        <div class="summary-item">
+                            <i class="bi bi-envelope-fill text-primary display-6"></i>
+                            <h4 class="mt-2 mb-1 fw-bold">12</h4>
+                            <p class="text-muted mb-0">New Messages</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3 mb-md-0">
+                        <div class="summary-item">
+                            <i class="bi bi-exclamation-triangle-fill text-warning display-6"></i>
+                            <h4 class="mt-2 mb-1 fw-bold">3</h4>
+                            <p class="text-muted mb-0">Warnings</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3 mb-md-0">
+                        <div class="summary-item">
+                            <i class="bi bi-check-circle-fill text-success display-6"></i>
+                            <h4 class="mt-2 mb-1 fw-bold">8</h4>
+                            <p class="text-muted mb-0">Completed</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="summary-item">
+                            <i class="bi bi-info-circle-fill text-info display-6"></i>
+                            <h4 class="mt-2 mb-1 fw-bold">5</h4>
+                            <p class="text-muted mb-0">Tips</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications Card -->
+        <div class="card shadow-sm">
+            <div class="card-header bg-white py-3">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-card-list"></i> Recent Notifications
+                </h5>
+            </div>
+            <div class="card-body p-4">
+                <!-- Success Alert -->
+                <div class="alert alert-success d-flex align-items-start shadow-sm" role="alert">
+                    <i class="bi bi-check-circle-fill me-3 flex-shrink-0 fs-4"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading fw-bold mb-2">
+                            <i class="bi bi-envelope"></i> New Messages Received!
+                        </h5>
+                        <p class="mb-2">
+                            You have <strong>5 new messages</strong> in your inbox from team members. 
+                            Check them out to stay updated with ongoing projects.
+                        </p>
+                        <hr>
+                        <p class="mb-0 small">
+                            <i class="bi bi-clock"></i> 2 minutes ago
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Info Alert -->
+                <div class="alert alert-info d-flex align-items-start shadow-sm" role="alert">
+                    <i class="bi bi-lightbulb-fill me-3 flex-shrink-0 fs-4"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading fw-bold mb-2">
+                            <i class="bi bi-star"></i> Pro Tip of the Day
+                        </h5>
+                        <p class="mb-2">
+                            Did you know? You can use keyboard shortcuts to navigate faster. 
+                            Press <kbd>Ctrl</kbd> + <kbd>N</kbd> to create a new notification.
+                        </p>
+                        <hr>
+                        <p class="mb-0 small">
+                            <i class="bi bi-clock"></i> 15 minutes ago
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Danger Alert with Dismissible -->
+                <div class="alert alert-danger alert-dismissible fade show d-flex align-items-start shadow-sm" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-3 flex-shrink-0 fs-4"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading fw-bold mb-2">
+                            <i class="bi bi-shield-exclamation"></i> Security Warning
+                        </h5>
+                        <p class="mb-2">
+                            <strong>Action Required:</strong> Your password will expire in 3 days. 
+                            Please update your password to maintain account security.
+                        </p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="mb-0 small">
+                                <i class="bi bi-clock"></i> 1 hour ago
+                            </p>
+                            <button type="button" class="btn btn-sm btn-outline-danger">
+                                Update Password
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                <!-- Warning Alert with Dismissible -->
+                <div class="alert alert-warning alert-dismissible fade show d-flex align-items-start shadow-sm" role="alert">
+                    <i class="bi bi-exclamation-circle-fill me-3 flex-shrink-0 fs-4"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading fw-bold mb-2">
+                            <i class="bi bi-cloud-download"></i> System Maintenance
+                        </h5>
+                        <p class="mb-2">
+                            Scheduled maintenance will occur on <strong>Saturday at 2:00 AM</strong>. 
+                            The system will be unavailable for approximately 2 hours.
+                        </p>
+                        <hr>
+                        <p class="mb-0 small">
+                            <i class="bi bi-clock"></i> 3 hours ago
+                        </p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                <!-- Additional Success Alert -->
+                <div class="alert alert-success d-flex align-items-start shadow-sm" role="alert">
+                    <i class="bi bi-file-earmark-check-fill me-3 flex-shrink-0 fs-4"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading fw-bold mb-2">
+                            <i class="bi bi-clipboard-check"></i> Task Completed Successfully
+                        </h5>
+                        <p class="mb-2">
+                            Your report submission has been processed successfully. 
+                            The document is now available in your dashboard.
+                        </p>
+                        <hr>
+                        <p class="mb-0 small">
+                            <i class="bi bi-clock"></i> 5 hours ago
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Info Alert with Action -->
+                <div class="alert alert-info alert-dismissible fade show d-flex align-items-start shadow-sm" role="alert">
+                    <i class="bi bi-gift-fill me-3 flex-shrink-0 fs-4"></i>
+                    <div class="flex-grow-1">
+                        <h5 class="alert-heading fw-bold mb-2">
+                            <i class="bi bi-trophy"></i> New Feature Available
+                        </h5>
+                        <p class="mb-2">
+                            We've just launched a new analytics dashboard! 
+                            Get insights into your productivity and track your progress.
+                        </p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="mb-0 small">
+                                <i class="bi bi-clock"></i> Yesterday
+                            </p>
+                            <button type="button" class="btn btn-sm btn-info text-white">
+                                Explore Now
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="card-footer bg-light text-center">
+                <button class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-clockwise"></i> Load More Notifications
+                </button>
+            </div>
+        </div>
+
+        <!-- Additional Summary Well -->
+        <div class="card mt-4 shadow-sm">
+            <div class="card-body bg-light p-4">
+                <h5 class="fw-bold mb-3">
+                    <i class="bi bi-info-square-fill text-primary"></i> Quick Summary
+                </h5>
+                <div class="well-content">
+                    <p class="mb-3">
+                        <strong>Welcome back!</strong> Here's what's happening with your account today.
+                    </p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2">
+                            <i class="bi bi-check2 text-success"></i> 
+                            All systems are operational
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-check2 text-success"></i> 
+                            Your profile is 100% complete
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-check2 text-success"></i> 
+                            No pending actions required
+                        </li>
+                        <li>
+                            <i class="bi bi-check2 text-success"></i> 
+                            Last login: Today at 9:30 AM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Notifications Dashboard. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

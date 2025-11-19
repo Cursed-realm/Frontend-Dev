@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - SaaS Product</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="PricingPlans.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-dark text-white py-4 mb-5">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-bold fs-4" href="#">
+                        <i class="bi bi-cloud-check"></i> CloudFlow
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Section Title -->
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold mb-3">Choose Your Plan</h1>
+            <p class="lead text-muted mb-4">
+                Select the perfect plan for your business needs. Upgrade or downgrade anytime.
+            </p>
+            <div class="d-flex justify-content-center align-items-center gap-3 mb-4">
+                <span class="fw-semibold">Monthly</span>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="billingSwitch" checked>
+                    <label class="form-check-label" for="billingSwitch"></label>
+                </div>
+                <span class="fw-semibold">
+                    Annual <span class="badge bg-success ms-1">Save 20%</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Pricing Cards Row -->
+        <div class="row g-4 mb-5">
+            <!-- Basic Plan Card -->
+            <div class="col-md-4">
+                <div class="card pricing-card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="plan-icon mb-3">
+                            <i class="bi bi-box text-secondary"></i>
+                        </div>
+                        <h3 class="card-title fw-bold mb-3">Basic</h3>
+                        <p class="text-muted mb-4">Perfect for individuals and small projects</p>
+                        
+                        <div class="price-section mb-4">
+                            <h2 class="display-4 fw-bold mb-0">
+                                $9
+                                <span class="fs-5 text-muted fw-normal">/month</span>
+                            </h2>
+                            <p class="text-muted small">Billed annually at $108</p>
+                        </div>
+
+                        <button class="btn btn-outline-primary w-100 mb-4 py-2">
+                            Get Started
+                        </button>
+
+                        <div class="features-list text-start">
+                            <h6 class="fw-bold mb-3">What's included:</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    5 Projects
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    10 GB Storage
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Basic Support
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Monthly Reports
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    API Access
+                                </li>
+                                <li class="mb-2 text-muted">
+                                    <i class="bi bi-x-circle-fill me-2"></i>
+                                    Advanced Analytics
+                                </li>
+                                <li class="mb-2 text-muted">
+                                    <i class="bi bi-x-circle-fill me-2"></i>
+                                    Priority Support
+                                </li>
+                                <li class="mb-2 text-muted">
+                                    <i class="bi bi-x-circle-fill me-2"></i>
+                                    Custom Integrations
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pro Plan Card (Highlighted) -->
+            <div class="col-md-4">
+                <div class="card pricing-card pro-plan h-100 shadow-lg bg-primary text-white">
+                    <div class="popular-badge">
+                        <span class="badge bg-warning text-dark">
+                            <i class="bi bi-star-fill"></i> Most Popular
+                        </span>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="plan-icon mb-3">
+                            <i class="bi bi-gem text-warning"></i>
+                        </div>
+                        <h3 class="card-title fw-bold mb-3">Pro</h3>
+                        <p class="mb-4 opacity-75">Best for growing teams and businesses</p>
+                        
+                        <div class="price-section mb-4">
+                            <h2 class="display-4 fw-bold mb-0">
+                                $29
+                                <span class="fs-5 fw-normal opacity-75">/month</span>
+                            </h2>
+                            <p class="small opacity-75">Billed annually at $348</p>
+                        </div>
+
+                        <button class="btn btn-light w-100 mb-4 py-2">
+                            Get Started
+                        </button>
+
+                        <div class="features-list text-start">
+                            <h6 class="fw-bold mb-3">Everything in Basic, plus:</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                                    Unlimited Projects
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                                    100 GB Storage
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                                    Priority Support
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                                    Advanced Analytics
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                                    Custom Reports
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                                    Team Collaboration
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                                    Advanced API Access
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-warning me-2"></i>
+                                    White-label Options
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enterprise Plan Card -->
+            <div class="col-md-4">
+                <div class="card pricing-card h-100 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="plan-icon mb-3">
+                            <i class="bi bi-building text-dark"></i>
+                        </div>
+                        <h3 class="card-title fw-bold mb-3">Enterprise</h3>
+                        <p class="text-muted mb-4">Advanced features for large organizations</p>
+                        
+                        <div class="price-section mb-4">
+                            <h2 class="display-4 fw-bold mb-0">
+                                $99
+                                <span class="fs-5 text-muted fw-normal">/month</span>
+                            </h2>
+                            <p class="text-muted small">Billed annually at $1,188</p>
+                        </div>
+
+                        <button class="btn btn-outline-primary w-100 mb-4 py-2">
+                            Contact Sales
+                        </button>
+
+                        <div class="features-list text-start">
+                            <h6 class="fw-bold mb-3">Everything in Pro, plus:</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Unlimited Everything
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    1 TB Storage
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    24/7 Dedicated Support
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Custom Integrations
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Advanced Security
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    SLA Guarantee
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Account Manager
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Custom Training
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8">
+                <div class="text-center mb-4">
+                    <h3 class="fw-bold">Frequently Asked Questions</h3>
+                </div>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                Can I change plans later?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any charges.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Is there a free trial available?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! All plans come with a 14-day free trial. No credit card required to get started.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                What payment methods do you accept?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We accept all major credit cards, PayPal, and bank transfers for Enterprise plans.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Section -->
+        <div class="text-center mt-5 py-5 bg-light rounded">
+            <h4 class="fw-bold mb-4">Trusted by over 10,000 companies worldwide</h4>
+            <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+                <div class="trust-badge">
+                    <i class="bi bi-shield-check text-success fs-1"></i>
+                    <p class="small mb-0 mt-2">Secure & Compliant</p>
+                </div>
+                <div class="trust-badge">
+                    <i class="bi bi-award text-primary fs-1"></i>
+                    <p class="small mb-0 mt-2">Award Winning</p>
+                </div>
+                <div class="trust-badge">
+                    <i class="bi bi-chat-dots text-info fs-1"></i>
+                    <p class="small mb-0 mt-2">24/7 Support</p>
+                </div>
+                <div class="trust-badge">
+                    <i class="bi bi-graph-up text-warning fs-1"></i>
+                    <p class="small mb-0 mt-2">98% Uptime</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2024 CloudFlow. All rights reserved.</p>
+            <p class="small mb-0 text-muted">
+                <a href="#" class="text-muted text-decoration-none me-3">Terms</a>
+                <a href="#" class="text-muted text-decoration-none me-3">Privacy</a>
+                <a href="#" class="text-muted text-decoration-none">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.a{
+    margin: 20px;
+    font-size: 15px;  
+}
+
+.b{
+    margin: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.c{
+    position: absolute;
+    bottom: 500px;
+    right: 800px;
+}
+button{
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+}
+.input-group mb-3{
+    position: absolute;
+    bottom: 200px;
+    margin: 50px;
+}

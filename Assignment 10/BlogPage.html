@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVista Blog - Custom Theme</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom Theme CSS -->
+    <link rel="stylesheet" href="BlogPage.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-journal-code"></i> TechVista
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header Section -->
+    <header class="hero-header bg-primary text-white py-5">
+        <div class="container text-center py-5">
+            <h1 class="display-3 fw-bold mb-4">Welcome to TechVista</h1>
+            <p class="lead mb-4">Exploring the intersection of technology, innovation, and creativity</p>
+            <button class="btn btn-light btn-lg me-3 mb-2">
+                <i class="bi bi-book"></i> Read Articles
+            </button>
+            <button class="btn btn-outline-light btn-lg mb-2">
+                <i class="bi bi-envelope"></i> Subscribe
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container my-5">
+        <!-- Section Title -->
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-primary mb-3">Latest Posts</h2>
+            <p class="lead text-muted">Fresh insights and stories from our community</p>
+        </div>
+
+        <!-- Blog Post Cards Row -->
+        <div class="row g-4 mb-5">
+            <!-- Blog Post Card 1 -->
+            <div class="col-md-6">
+                <div class="card blog-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop" 
+                         class="card-img-top" 
+                         alt="AI Technology">
+                    <div class="card-body d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-primary">Technology</span>
+                            <span class="badge bg-secondary ms-2">AI</span>
+                        </div>
+                        <h3 class="card-title fw-bold">The Future of Artificial Intelligence in 2024</h3>
+                        <p class="card-text text-muted mb-4">
+                            Discover how AI is transforming industries and reshaping our daily lives. 
+                            From machine learning to neural networks, explore the cutting-edge developments 
+                            that are pushing the boundaries of what's possible.
+                        </p>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Chen&size=40&background=6f42c1&color=fff" 
+                                     class="rounded-circle me-2" 
+                                     alt="Author">
+                                <div>
+                                    <p class="mb-0 fw-bold small">Sarah Chen</p>
+                                    <p class="mb-0 text-muted small">
+                                        <i class="bi bi-calendar3"></i> November 15, 2024
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post Card 2 -->
+            <div class="col-md-6">
+                <div class="card blog-card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop" 
+                         class="card-img-top" 
+                         alt="Web Development">
+                    <div class="card-body d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-primary">Development</span>
+                            <span class="badge bg-secondary ms-2">Web</span>
+                        </div>
+                        <h3 class="card-title fw-bold">Modern Web Development: Best Practices for 2024</h3>
+                        <p class="card-text text-muted mb-4">
+                            Learn the essential techniques and frameworks that every web developer should 
+                            know. From responsive design to performance optimization, we cover everything 
+                            you need to build exceptional web experiences.
+                        </p>
+                        <div class="mt-auto">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://ui-avatars.com/api/?name=Michael+Rodriguez&size=40&background=6f42c1&color=fff" 
+                                     class="rounded-circle me-2" 
+                                     alt="Author">
+                                <div>
+                                    <p class="mb-0 fw-bold small">Michael Rodriguez</p>
+                                    <p class="mb-0 text-muted small">
+                                        <i class="bi bi-calendar3"></i> November 12, 2024
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Articles Section -->
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card blog-card-small shadow-sm">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Design</span>
+                        <h5 class="card-title fw-bold">UI/UX Trends That Will Dominate</h5>
+                        <p class="card-text text-muted small mb-3">
+                            Explore the design patterns shaping user experiences...
+                        </p>
+                        <a href="#" class="text-primary fw-bold text-decoration-none">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card blog-card-small shadow-sm">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Security</span>
+                        <h5 class="card-title fw-bold">Cybersecurity in the Cloud Era</h5>
+                        <p class="card-text text-muted small mb-3">
+                            Understanding the evolving landscape of digital security...
+                        </p>
+                        <a href="#" class="text-primary fw-bold text-decoration-none">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card blog-card-small shadow-sm">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Innovation</span>
+                        <h5 class="card-title fw-bold">The Rise of Quantum Computing</h5>
+                        <p class="card-text text-muted small mb-3">
+                            How quantum technology will revolutionize computing...
+                        </p>
+                        <a href="#" class="text-primary fw-bold text-decoration-none">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="card bg-primary text-white my-5 shadow">
+            <div class="card-body text-center py-5">
+                <h3 class="fw-bold mb-3">Stay Updated with Our Newsletter</h3>
+                <p class="lead mb-4">Get the latest articles and insights delivered to your inbox</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <input type="email" 
+                                   class="form-control form-control-lg" 
+                                   placeholder="Enter your email">
+                            <button class="btn btn-light btn-lg" type="button">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-journal-code"></i> TechVista
+                    </h5>
+                    <p class="text-muted">
+                        Your destination for technology insights, innovation stories, 
+                        and expert perspectives on the digital world.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Write for Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2 mb-2">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center">
+                <p class="mb-0 text-muted">
+                    &copy; 2024 TechVista Blog. All rights reserved. Crafted with 
+                    <i class="bi bi-heart-fill text-danger"></i> and Bootstrap
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

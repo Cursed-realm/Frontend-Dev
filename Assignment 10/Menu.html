@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Menu - Delicious Bites Restaurant</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Menu.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">
+                <i class="bi bi-egg-fried"></i> Delicious Bites
+            </h1>
+            <p class="lead">Experience culinary excellence every day</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Today's Menu Title -->
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-primary mb-3">Today's Menu</h2>
+            <p class="lead text-muted">Fresh ingredients, authentic flavors</p>
+        </div>
+
+        <div class="row">
+            <!-- Menu Table Section -->
+            <div class="col-lg-8 mb-4">
+                <!-- Featured Image with Caption -->
+                <div class="mb-5">
+                    <figure class="text-center">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=500&fit=crop" 
+                             class="img-fluid rounded shadow-lg" 
+                             alt="Signature Dish">
+                        <figcaption class="mt-3 text-muted fst-italic">
+                            Our signature dish prepared with locally sourced ingredients
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- Appetizers Table -->
+                <div class="mb-5">
+                    <h3 class="fw-bold mb-3 section-title">
+                        <i class="bi bi-cup-hot text-warning"></i> Appetizers
+                    </h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col" class="text-end">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">Caesar Salad</td>
+                                    <td>Fresh romaine, parmesan, croutons</td>
+                                    <td class="text-end price-cell">$8.99</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Bruschetta</td>
+                                    <td>Toasted bread with tomatoes and basil</td>
+                                    <td class="text-end price-cell">$7.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Garlic Bread</td>
+                                    <td>Homemade bread with herb butter</td>
+                                    <td class="text-end price-cell">$5.99</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Soup of the Day</td>
+                                    <td>Ask your server for today's special</td>
+                                    <td class="text-end price-cell">$6.50</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Main Course Table -->
+                <div class="mb-5">
+                    <h3 class="fw-bold mb-3 section-title">
+                        <i class="bi bi-basket text-danger"></i> Main Course
+                    </h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col" class="text-end">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">Grilled Salmon</td>
+                                    <td>Fresh Atlantic salmon with vegetables</td>
+                                    <td class="text-end price-cell">$24.99</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Ribeye Steak</td>
+                                    <td>12oz premium cut with mashed potatoes</td>
+                                    <td class="text-end price-cell">$32.99</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Chicken Alfredo</td>
+                                    <td>Creamy pasta with grilled chicken</td>
+                                    <td class="text-end price-cell">$18.99</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Vegetable Risotto</td>
+                                    <td>Arborio rice with seasonal vegetables</td>
+                                    <td class="text-end price-cell">$16.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">BBQ Ribs</td>
+                                    <td>Slow-cooked ribs with coleslaw</td>
+                                    <td class="text-end price-cell">$22.99</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Desserts Table -->
+                <div class="mb-5">
+                    <h3 class="fw-bold mb-3 section-title">
+                        <i class="bi bi-cookie text-success"></i> Desserts
+                    </h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col" class="text-end">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">Chocolate Cake</td>
+                                    <td>Rich chocolate layers with ganache</td>
+                                    <td class="text-end price-cell">$7.99</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Tiramisu</td>
+                                    <td>Classic Italian coffee dessert</td>
+                                    <td class="text-end price-cell">$8.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Crème Brûlée</td>
+                                    <td>Vanilla custard with caramelized sugar</td>
+                                    <td class="text-end price-cell">$7.50</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chef's Specials Sidebar -->
+            <div class="col-lg-4">
+                <div class="position-sticky" style="top: 20px;">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-header bg-warning text-dark text-center py-3">
+                            <h4 class="mb-0 fw-bold">
+                                <i class="bi bi-star-fill"></i> Chef's Specials
+                            </h4>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-2 fw-bold">Truffle Pasta</h5>
+                                        <p class="mb-1 text-muted small">Handmade pasta with black truffle and parmesan</p>
+                                    </div>
+                                    <span class="badge bg-warning text-dark rounded-pill">$28.99</span>
+                                </div>
+                            </div>
+                            
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-2 fw-bold">Lobster Thermidor</h5>
+                                        <p class="mb-1 text-muted small">Whole lobster in creamy cognac sauce</p>
+                                    </div>
+                                    <span class="badge bg-warning text-dark rounded-pill">$45.99</span>
+                                </div>
+                            </div>
+                            
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-2 fw-bold">Lamb Chops</h5>
+                                        <p class="mb-1 text-muted small">Herb-crusted with mint chimichurri</p>
+                                    </div>
+                                    <span class="badge bg-warning text-dark rounded-pill">$34.99</span>
+                                </div>
+                            </div>
+                            
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-2 fw-bold">Seafood Paella</h5>
+                                        <p class="mb-1 text-muted small">Spanish rice with fresh seafood mix</p>
+                                    </div>
+                                    <span class="badge bg-warning text-dark rounded-pill">$29.99</span>
+                                </div>
+                            </div>
+                            
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-2 fw-bold">Duck Confit</h5>
+                                        <p class="mb-1 text-muted small">Slow-cooked duck with cherry reduction</p>
+                                    </div>
+                                    <span class="badge bg-warning text-dark rounded-pill">$36.99</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-light text-center">
+                            <p class="mb-0 text-muted small fst-italic">
+                                <i class="bi bi-clock"></i> Available for limited time only
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info Card -->
+                    <div class="card mt-4 shadow border-0">
+                        <div class="card-body bg-light">
+                            <h5 class="card-title fw-bold text-center mb-3">
+                                <i class="bi bi-info-circle text-primary"></i> Information
+                            </h5>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle text-success"></i> All dishes made fresh daily
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle text-success"></i> Vegetarian options available
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle text-success"></i> Gluten-free upon request
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle text-success"></i> Local & organic ingredients
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-2 fw-bold">Delicious Bites Restaurant</p>
+            <p class="mb-0 small">Open Daily: 11:00 AM - 10:00 PM | Reservations: (555) 123-4567</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Enhancements */
+header {
+    background: linear-gradient(135deg, #212529 0%, #495057 100%) !important;
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+header .lead {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Profile Image Enhancements */
+.rounded-circle {
+    border: 5px solid #0d6efd;
+    transition: transform 0.3s ease;
+}
+
+.rounded-circle:hover {
+    transform: scale(1.05);
+}
+
+/* Button Hover Effects */
+.btn {
+    transition: all 0.3s ease;
+    padding: 12px 30px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+/* Contact Form Styling */
+.form-control {
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+/* Form Container */
+.bg-white.shadow-sm {
+    border: 1px solid #e9ecef;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+}
+
+main h2 {
+    color: #212529;
+    font-size: 2rem;
+}
+
+main p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Footer Styling */
+footer {
+    margin-top: auto;
+    background: linear-gradient(135deg, #212529 0%, #495057 100%) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header .lead {
+        font-size: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    .me-3 {
+        margin-right: 0 !important;
+    }
+}
