@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking </title>
+    <script src="MovieTicketBooking.js"></script>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); bookTicket();">
+  <input type="text" id="name" placeholder="Name" required>
+  <input type="text" id="email" placeholder="Email" required>
+  <input type="number" id="seats" placeholder="Seats (1-10)" required>
+  <button type="submit">Book Ticket</button>
+</form>
+<div id="ticket"></div>
+</body>
+</html>
