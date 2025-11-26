@@ -1,0 +1,38 @@
+<form id="multi-step-form">
+  <!-- Step 1 -->
+  <div class="step" data-step="1">
+    <h2>Step 1: Name</h2>
+    <input type="text" id="name" placeholder="Enter your name" required />
+    <div class="error" id="name-error"></div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" data-step="2" style="display: none;">
+    <h2>Step 2: Email</h2>
+    <input type="email" id="email" placeholder="Enter your email" required />
+    <div class="error" id="email-error"></div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" data-step="3" style="display: none;">
+    <h2>Step 3: Password</h2>
+    <input type="password" id="password" placeholder="Enter password" required />
+    <div class="error" id="password-error"></div>
+  </div>
+
+  <!-- Navigation buttons -->
+  <div class="nav-buttons">
+    <button type="button" id="back-btn">Back</button>
+    <button type="button" id="next-btn">Next</button>
+  </div>
+
+  <!-- Summary (hidden initially) -->
+  <div id="summary" style="display: none;">
+    <h2>Summary</h2>
+    <p><strong>Name:</strong> <span id="summary-name"></span></p>
+    <p><strong>Email:</strong> <span id="summary-email"></span></p>
+    <p><strong>Password:</strong> <span id="summary-password"></span></p>
+  </div>
+</form>
+
+<script src="multi-step.js"></script>
