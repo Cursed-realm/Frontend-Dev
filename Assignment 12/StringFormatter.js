@@ -1,0 +1,10 @@
+let Product = " Washing Machine  ";
+let trim = Product.trim();
+const lower = trim.toLowerCase();
+let words = lower.split(/\s+/);
+let capitalized = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+let Title = capitalized.join(' ');
+Title = Title.replace(/\bPro\b/g, 'Pro Edition');
+console.log('Cleaned Title:', Title);
+console.log('Length:', Title.length);
+module.exports = {Product,Title };

@@ -1,0 +1,10 @@
+let scores = Array.from({ length: 8 }, () => Math.floor(Math.random() * 71) + 30);
+let highest = Math.max(...scores);
+let lowest = Math.min(...scores);
+let total = scores.reduce((acc, cur) => acc + cur, 0);
+let average = total / scores.length;
+let passed = scores.filter(score => score >= 50).length;
+let labeled = scores.map((score, idx) => `Student ${idx + 1}: ${score}`);
+let s = `Student Scores:\n${labeled.join('\\n')}\n\nSummary:\n- Highest: ${highest}\n- Lowest: ${lowest}\n- Average: ${average.toFixed(2)}\n- Passed (>=50): ${passed} of ${scores.length}`;
+console.log(s);
+module.exports = { scores, highest, lowest, average, passed};
