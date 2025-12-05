@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Team Members Directory — Q5</title>
+    <style>
+      body {
+        font-family: Inter, system-ui, -apple-system, Roboto, "Segoe UI", Arial;
+        color: #0f172a;
+        background: linear-gradient(180deg, #eef2ff 0%, #f8fbff 100%);
+        padding: 20px;
+      }
+      .page {
+        max-width: 920px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin-bottom: 6px;
+        color: #0f172a;
+      }
+      .hint {
+        color: #475569;
+        margin-bottom: 14px;
+        font-size: 0.95em;
+      }
+      .muted {
+        color: #6b7280;
+        font-size: 0.9em;
+      }
+      .feature-box {
+        background: #fff;
+        padding: 14px 16px;
+        margin: 12px 0;
+        border-left: 4px solid #667eea;
+        border-radius: 8px;
+      }
+      .feature-box strong {
+        color: #667eea;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <h1>👥 Team Members Directory</h1>
+      <div class="hint">
+        Interactive organizational structure with hierarchical relationships and
+        DOM traversal.
+      </div>
+
+      <div id="team-directory-root"></div>
+
+      <div
+        style="
+          margin-top: 24px;
+          padding: 16px;
+          background: #fff;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <h2 style="margin-top: 0; color: #0f172a">Features</h2>
+
+        <div class="feature-box">
+          <strong>1️⃣ Click Manager → Highlight Direct Reports</strong>
+          <p>
+            Click on an employee with a manager icon (👔) to highlight them and
+            their direct reports using blue highlighting.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <strong>2️⃣ Hover Employee → Show Contact Info</strong>
+          <p>
+            Hover over any employee card to reveal their email and phone number
+            stored in hidden contact elements.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <strong>3️⃣ Click Department → Change Member Background</strong>
+          <p>
+            Click the "Change BG" button in a department header to randomly
+            change the background color of all members using .children().
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <strong>4️⃣ Select Random Employee → Highlight Siblings</strong>
+          <p>
+            Click the "Select" button on any employee to highlight all sibling
+            employees (same department) with orange highlighting.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <strong>5️⃣ Collapse/Expand Team</strong>
+          <p>
+            Click the department name or toggle arrow to collapse/expand the
+            team using .parent() and .find() DOM traversal methods.
+          </p>
+        </div>
+
+        <div class="muted" style="margin-top: 16px">
+          <strong>Technical Notes:</strong>
+          <ul style="margin: 6px 0 0 20px">
+            <li>
+              Uses DOM traversal: .next(), .parent(), .find(), .children(),
+              .siblings() patterns
+            </li>
+            <li>Department colors change dynamically</li>
+            <li>Contact info shown on hover via display toggle</li>
+            <li>Managers indicated with 👔 icon</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="TeamDirectory.js"></script>
+  </body>
+</html>

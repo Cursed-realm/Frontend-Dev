@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Highlight - Q2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .header {
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        text-align: center;
+        color: white;
+      }
+
+      .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .header p {
+        font-size: 1.1em;
+        opacity: 0.9;
+      }
+
+      .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      #products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .info-section {
+        max-width: 1200px;
+        margin: 30px auto 0;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .info-section h2 {
+        color: #667eea;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+
+      .info-section h3 {
+        color: #764ba2;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+      }
+
+      .info-section ul {
+        line-height: 1.8;
+        color: #555;
+        margin-left: 20px;
+      }
+
+      .info-section li {
+        margin-bottom: 10px;
+      }
+
+      code {
+        background: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        color: #d63384;
+      }
+
+      .feature-highlight {
+        background: linear-gradient(135deg, #fff9e6 0%, #ffe6e6 100%);
+        padding: 15px;
+        border-left: 4px solid #667eea;
+        margin: 15px 0;
+        border-radius: 8px;
+      }
+
+      .feature-highlight strong {
+        color: #667eea;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 1.8em;
+        }
+
+        #products-container {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 15px;
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🛍️ E-Commerce Product Highlight</h1>
+      <p>
+        Interactive product showcase with dynamic highlighting and selection
+      </p>
+    </div>
+
+    <div class="content-wrapper">
+      <!-- Products will be rendered here -->
+      <div id="products-container"></div>
+    </div>
+
+    <div class="info-section">
+      <h2>✨ Product Highlight Features</h2>
+
+      <h3>1️⃣ Click Product to Highlight</h3>
+      <ul>
+        <li>
+          Click any product card to highlight it with a golden background and
+          border
+        </li>
+        <li>Only one product is highlighted at a time</li>
+        <li>Visual feedback with smooth transitions</li>
+      </ul>
+
+      <h3>2️⃣ Hover to Show Details</h3>
+      <ul>
+        <li>Hover over a product card to reveal additional details</li>
+        <li>Details appear with a smooth animation</li>
+        <li>Includes product description in a styled box</li>
+      </ul>
+
+      <h3>3️⃣ Favorite Icon Toggle</h3>
+      <ul>
+        <li>Click the heart icon (♡) to add/remove from favorites</li>
+        <li>Toggles the <code>selected</code> class on the product card</li>
+        <li>Heart changes color when favorited (♥)</li>
+        <li>Pink border indicates selected/favorited product</li>
+      </ul>
+
+      <h3>4️⃣ Discount Attribute Styling</h3>
+      <ul>
+        <li>Products with discounts are styled with special indicators:</li>
+        <li>Red discount badge showing percentage off</li>
+        <li>Price tag emoji (🏷️) on the card</li>
+        <li>Red border accent on product info section</li>
+        <li>Uses CSS attribute selector: <code>[data-discount]</code></li>
+      </ul>
+
+      <h3>5️⃣ Out-of-Stock Alert</h3>
+      <ul>
+        <li>
+          Uses <code>data-in-stock</code> attribute to track inventory status
+        </li>
+        <li>
+          Out-of-stock products show "Out of Stock" badge with red background
+        </li>
+        <li>Clicking "Add to Cart" on out-of-stock items shows an alert</li>
+        <li>In-stock products show confirmation alert</li>
+      </ul>
+
+      <div class="feature-highlight">
+        <strong>💡 Pro Tips:</strong>
+        <ul style="margin: 10px 0 0 20px">
+          <li>Try clicking different products to see the highlight effect</li>
+          <li>Hover over products to discover more details</li>
+          <li>Notice how discounted items have special styling</li>
+          <li>
+            Check the out-of-stock items (USB-C Cable, Bluetooth Speaker) to see
+            the alert
+          </li>
+          <li>Favorite multiple products to build your wishlist</li>
+        </ul>
+      </div>
+
+      <h2 style="margin-top: 30px">📊 Technical Implementation</h2>
+      <ul>
+        <li>
+          <strong>CSS Attribute Selectors:</strong>
+          <code>[data-discount]</code> for discount styling
+        </li>
+        <li>
+          <strong>Data Attributes:</strong> <code>data-in-stock</code> for stock
+          status tracking
+        </li>
+        <li>
+          <strong>Dynamic Classes:</strong> <code>.highlighted</code>,
+          <code>.selected</code>, <code>.hidden</code>
+        </li>
+        <li>
+          <strong>Event Delegation:</strong> Efficient event handling on product
+          cards
+        </li>
+        <li><strong>CSS Grid Layout:</strong> Responsive product grid</li>
+        <li>
+          <strong>Smooth Transitions:</strong> CSS animations for user
+          interactions
+        </li>
+      </ul>
+    </div>
+
+    <script src="ProductHighlight.js"></script>
+  </body>
+</html>

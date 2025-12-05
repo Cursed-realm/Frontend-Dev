@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Page Greeting - Q1</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .info-section {
+        max-width: 700px;
+        margin: 30px auto 0;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .info-section h2 {
+        color: #667eea;
+        margin-top: 0;
+      }
+
+      .info-section ul {
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .info-section li {
+        margin-bottom: 10px;
+      }
+
+      code {
+        background: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        color: #d63384;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The greeting component will be inserted here -->
+
+    <script src="WelcomePageGreeting.js"></script>
+
+    <div class="info-section">
+      <h2>✨ Welcome Page Greeting Features</h2>
+      <ul>
+        <li>
+          <strong>⏰ Time-based Greeting:</strong> The greeting changes based on
+          time of day (Morning 5am-12pm, Afternoon 12pm-6pm, Evening 6pm-5am)
+        </li>
+        <li>
+          <strong>💡 Change Greeting Button:</strong> Displays a random
+          motivational quote from a curated list
+        </li>
+        <li>
+          <strong>👁️ Toggle Welcome Message:</strong> Hide or show the welcome
+          message with smooth animation
+        </li>
+        <li>
+          <strong>🔔 Click Alert:</strong> Click on the greeting text to see an
+          alert with the current greeting message
+        </li>
+        <li>
+          <strong>🎨 Beautiful Styling:</strong> Gradient background, smooth
+          animations, and hover effects
+        </li>
+      </ul>
+
+      <h2>🎯 How to Test</h2>
+      <ul>
+        <li>Refresh the page to see the time-based greeting update</li>
+        <li>Click the greeting text to trigger an alert</li>
+        <li>Click "Change Greeting" to see a random motivational quote</li>
+        <li>Click "Hide Welcome Message" to toggle the welcome text</li>
+        <li>Hover over buttons to see interactive effects</li>
+      </ul>
+    </div>
+  </body>
+</html>
